@@ -1,6 +1,6 @@
 " ~/.vim/sessions/default.vim:
 " Vim session script.
-" Created by session.vim 2.7 on 27 Ноябрь 2014 at 14:40:34.
+" Created by session.vim 2.7 on 27 Ноябрь 2014 at 15:21:37.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=aegimrLt
@@ -19,7 +19,7 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Sites/github/yaltashop/public/modules/products/config
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -63,9 +63,9 @@ badd +106 ~/.vim/rc_files/mappings.vim
 badd +4 ~/Sites/github/shop-mean/karma.conf.js
 badd +8 ~/Sites/github/dotaftw/urls.py
 badd +1 ~/1
-badd +0 ~/.vim/bundle/vim-snippets/UltiSnips/javascript.snippets
-badd +0 ~/.vim/bundle/vim-snippets/UltiSnips/python.snippets
-args ~/.vim/bundle/vim-snippets/UltiSnips/python.snippets
+badd +1 ~/.vim/bundle/vim-snippets/UltiSnips/javascript.snippets
+badd +5 ~/.vim/bundle/vim-snippets/UltiSnips/python.snippets
+args .vim/bundle/vim-snippets/UltiSnips/python.snippets
 edit ~/.gvimrc
 set splitbelow splitright
 set nosplitbelow
@@ -82,11 +82,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
+1
 normal! 0
 lcd ~/Sites/github
 tabedit ~/.vimrc
@@ -105,12 +105,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 54 - ((47 * winheight(0) + 24) / 48)
+let s:l = 51 - ((15 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-54
-normal! 0
+51
+normal! 04|
 lcd ~/Sites/github
 tabedit ~/.vim/rc_files/mappings.vim
 set splitbelow splitright
@@ -128,12 +128,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 112 - ((42 * winheight(0) + 24) / 48)
+let s:l = 3 - ((2 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-112
-normal! 02|
+3
+normal! 019|
 lcd ~/Sites/github
 tabedit ~/Sites/github/yaltashop/public/modules/products/config/products.client.config.js
 set splitbelow splitright
@@ -151,12 +151,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 12 - ((11 * winheight(0) + 24) / 48)
+let s:l = 10 - ((9 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-12
-normal! 0
+10
+normal! 03|
+lcd ~/Sites/github
 tabedit ~/.vim/bundle/vim-snippets/UltiSnips/javascript.snippets
 set splitbelow splitright
 set nosplitbelow
@@ -164,7 +165,7 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-setlocal fdm=expr
+setlocal fdm=indent
 setlocal fde=getline(v:lnum)!~'^\\t\\|^$'?'>1':1
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -172,16 +173,19 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-7
+12
 silent! normal! zo
-8
+18
 silent! normal! zo
-let s:l = 11 - ((10 * winheight(0) + 24) / 48)
+32
+silent! normal! zo
+let s:l = 11 - ((10 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 11
-normal! 01|
+normal! 018|
+lcd ~/Sites/github
 tabedit ~/.vim/bundle/vim-snippets/UltiSnips/python.snippets
 set splitbelow splitright
 set nosplitbelow
@@ -189,7 +193,6 @@ set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-1argu
 setlocal fdm=expr
 setlocal fde=getline(v:lnum)!~'^\\t\\|^$'?'>1':1
 setlocal fmr={{{,}}}
@@ -198,14 +201,18 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+1
+silent! normal! zo
+12
+silent! normal! zo
+let s:l = 5 - ((4 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+5
 normal! 0
 lcd ~/Sites/github
-tabnext 3
+tabnext 5
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -222,7 +229,7 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 3
+tabnext 5
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
 if !getbufvar(s:wipebuf, '&modified')

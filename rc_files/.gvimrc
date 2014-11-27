@@ -29,3 +29,6 @@ let g:netrw_liststyle=3
 
 " Change directory to the current buffer when opening files.
 set autochdir
+
+" Extra white space color
+hi ExtraWhitespace guibg=#990000 ctermbg=red

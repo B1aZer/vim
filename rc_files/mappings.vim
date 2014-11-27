@@ -1,5 +1,7 @@
 let mapleader = "\<Space>"
 
+nnoremap <space> za
+
 " Expand region pligun bind o v
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)

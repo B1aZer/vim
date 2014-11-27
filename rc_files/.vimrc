@@ -48,6 +48,15 @@ set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
 ""
+"" Folding settings
+""
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+""
 "" Wild settings
 ""
 
@@ -71,6 +80,7 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
+
 
 ""
 "" Backup and swap files
