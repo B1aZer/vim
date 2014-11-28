@@ -57,6 +57,13 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 ""
+"" Splits
+""
+
+set splitbelow
+set splitright
+
+""
 "" Wild settings
 ""
 
@@ -117,4 +124,24 @@ endif
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
 
+""
+"" Netrw
+""
+
 let g:netrw_banner=0
+" Hit enter in the file browser to open the selected
+" file with :vsplit to the right of the browser.
+
+let g:netrw_browse_split = 4
+let g:netrw_preview = 1
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+" Default to tree mode
+" let g:netrw_liststyle=3
+
+" Change directory to the current buffer when opening files.
+" set autochdir
+
+" Extra white space color
+hi ExtraWhitespace guibg=#990000 ctermbg=red

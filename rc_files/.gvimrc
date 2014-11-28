@@ -17,18 +17,3 @@ set cursorline
 set ve=all
 
 set showcmd
-
-" Hit enter in the file browser to open the selected
-" file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-
-" Default to tree mode
-let g:netrw_liststyle=3
-
-" Change directory to the current buffer when opening files.
-set autochdir
-
-" Extra white space color
-hi ExtraWhitespace guibg=#990000 ctermbg=red

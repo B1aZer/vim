@@ -1,7 +1,5 @@
 let mapleader = "\<Space>"
 
-nnoremap <space> za
-
 " Expand region pligun bind o v
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -19,7 +17,7 @@ vmap <silent> <expr> p <sid>Repl()
 
 " expand to current working directory
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
+map <leader>e :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
@@ -28,20 +26,19 @@ map <leader>et :tabe %%
 nnoremap <leader>fef :normal! gg=G``<CR>
 
 " cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
+nmap <leader>cd :lcd %:h<CR>
 
 " set text wrapping toggles
-" TODO: what is this ?
-nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
 
 " Toggle hlsearch with <leader>hs
-nmap <leader>hl :set hlsearch! hlsearch?<CR>
+nmap <leader><F3> :set hlsearch! hlsearch?<CR>
 
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 
 " Maximize split
-nnoremap <silent> <Leader>- :exe "vertical resize " . (200 * 3/2)<CR>
+nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 " tab navigation like firefox
 nnoremap <A-j>           : tabprevious<CR>
@@ -74,7 +71,7 @@ map  <A-9> 9gt
 imap <A-9> <Esc>9gt
 
 "makes K split lines (the opposite of J)
-nnoremap K i<cr><esc>k$ 
+nnoremap K i<cr><esc>k$
 
 " Move tabs with alt + left|right
 nnoremap <silent> <C-H> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -82,26 +79,7 @@ nnoremap <silent> <C-L> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
-" Toggle Vexplore with Ctrl-E
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-          let cur_win_nr = winnr()
-          exec expl_win_num . 'wincmd w'
-          close
-          exec cur_win_nr . 'wincmd w'
-          unlet t:expl_buf_num
-      else
-          unlet t:expl_buf_num
-      endif
-  else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
-map <silent> <A-n> :call ToggleVExplorer()<CR>
+map <silent> <A-n> :Lexplore<CR>
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -112,3 +90,13 @@ endif
 
 " Clean whiespace
 map <silent> <leader><F2> :StripWhitespace<CR>
+
+" Moving between windows
+map <leader>h <C-W>h
+map <leader>j <C-W>j
+map <leader>k <C-W>k
+map <leader>l <C-W>l
+map <leader>H <c-w>H
+map <leader>J <c-w>J
+map <leader>K <c-w>K
+map <leader>L <c-w>L
