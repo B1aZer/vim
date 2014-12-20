@@ -8,7 +8,7 @@ set guifont=Ubuntu\ Mono\ Bold\ 14
 
 set lines=999 columns=999
 
-source $VIMRUNTIME/mswin.vim
+source ~/.vim/rc_files/mswin.vim
 behave mswin
 
 set guioptions-=T
