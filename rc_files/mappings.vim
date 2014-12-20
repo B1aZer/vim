@@ -124,7 +124,7 @@ map <Leader><Leader>l <Plug>(easymotion-lineforward)
 map <Leader><Leader>h <Plug>(easymotion-linebackward)
 
 " Past from yank buffer
-" imap <C-S-V> <C-R>"
+imap <C-R><C-R> <C-R>"
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
