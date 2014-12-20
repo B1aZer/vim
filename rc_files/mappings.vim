@@ -22,6 +22,8 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
+map <silent> <leader>ee :Explore<CR>
+
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
 
@@ -81,15 +83,19 @@ nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 map <silent> <A-n> :Lexplore<CR>
 
-if exists(":Tabularize")
-  nmap <Leader>a= :Tabularize /=<CR>
-  vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-  vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
 
 " Clean whiespace
 map <silent> <leader><F2> :StripWhitespace<CR>
+
+" Wrapped movings
+map j gj
+map k gk
 
 " Moving between windows
 map <leader>h <C-W>h
@@ -100,3 +106,39 @@ map <leader>H <c-w>H
 map <leader>J <c-w>J
 map <leader>K <c-w>K
 map <leader>L <c-w>L
+
+map <leader>r <c-w>r
+map <leader>R <c-w>R
+
+map <leader>2h <C-W>2h
+map <leader>2j <C-W>2j
+map <leader>2k <C-W>2k
+map <leader>2l <C-W>2l
+
+" Close window
+map <leader>q <c-w>q
+map <silent> <leader>qq :q!<CR>
+
+" Easy movings
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+
+" Past from yank buffer
+" imap <C-S-V> <C-R>"
+
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
+
+" fugitive
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+"nnoremap <silent> <leader>gc :Gcommit<CR>
+"nnoremap <silent> <leader>gb :Gblame<CR>
+"nnoremap <silent> <leader>gl :Glog<CR>
+"nnoremap <silent> <leader>gp :Git push<CR>
+"nnoremap <silent> <leader>gr :Gread<CR>
+"nnoremap <silent> <leader>gw :Gwrite<CR>
+"nnoremap <silent> <leader>ge :Gedit<CR>
+" Mnemonic _i_nteractive
+"nnoremap <silent> <leader>gi :Git add -p %<CR>
+"nnoremap <silent> <leader>gg :SignifyToggle<CR>

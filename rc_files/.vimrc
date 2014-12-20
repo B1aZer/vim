@@ -17,6 +17,9 @@ set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
+set history=1000
+" set spell
+
 ""
 "" Whitespace
 ""
@@ -102,6 +105,8 @@ set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
+set pastetoggle=<F12>
+
 ""
 "" File types
 ""
@@ -132,16 +137,26 @@ let g:netrw_banner=0
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
 
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 let g:netrw_preview = 1
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
+
+let g:netrw_mousemaps = 0
 
 " Default to tree mode
 " let g:netrw_liststyle=3
 
 " Change directory to the current buffer when opening files.
-" set autochdir
+set autochdir
 
 " Extra white space color
 hi ExtraWhitespace guibg=#990000 ctermbg=red
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" Powerline fonts
+let g:airline_powerline_fonts = 1
+
+" Dont pair " in vim files
+let g:autoclose_vim_commentmode = 1

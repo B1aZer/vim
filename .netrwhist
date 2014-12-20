@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/blaze/.vim/rc_files'
-let g:netrw_dirhist_2='/home/blaze/Sites/github/yaltashop/app/controllers'
-let g:netrw_dirhist_3='/home/blaze/Sites/github/yaltashop/public/modules/products/services'
-let g:netrw_dirhist_4='/home/blaze/.vim/rc_files'
-let g:netrw_dirhist_5='/home/blaze/Sites/github/yaltashop/app/controllers'
-let g:netrw_dirhist_6='/home/blaze/Sites/github/yaltashop/public/modules/products/services'
-let g:netrw_dirhist_7='/home/blaze/.vim/rc_files'
+let g:netrw_dirhist_2='/home/blaze/Sites/helen/easycamp/mvp/backend'
+let g:netrw_dirhist_3='/home/blaze/.vim/rc_files'
