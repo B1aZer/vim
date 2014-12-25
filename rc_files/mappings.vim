@@ -142,3 +142,18 @@ nnoremap <silent> <leader>gd :Gdiff<CR>
 " Mnemonic _i_nteractive
 "nnoremap <silent> <leader>gi :Git add -p %<CR>
 "nnoremap <silent> <leader>gg :SignifyToggle<CR>
+
+" Relad syntax
+noremap <F11> <Esc>:syntax sync fromstart<CR>
+inoremap <F11> <C-o>:syntax sync fromstart<CR>
+
+" Gpto beggining
+nmap <leader>0 ^
+
+" Remap ` to '
+" nnoremap ' `
+" nnoremap ` '
+
+"Yanks mappings
+"nmap <leader>p <Plug>yankstack_substitute_older_paste
+"nmap <leader>P <Plug>yankstack_substitute_newer_paste

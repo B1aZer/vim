@@ -1,11 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/usr'
-let g:netrw_dirhist_2='/'
-let g:netrw_dirhist_3='/home'
-let g:netrw_dirhist_4='/home/blaze'
-let g:netrw_dirhist_5='/home/blaze/.vim'
-let g:netrw_dirhist_6='/home/blaze'
-let g:netrw_dirhist_7='/home/blaze/.vim/rc_files'
-let g:netrw_dirhist_8='/usr/share/vim/vim74'
-let g:netrw_dirhist_9='/home/blaze/.vim/rc_files'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/blaze/Sites/helen/easycamp/mvp/app/bower_components'
+let g:netrw_dirhist_2='/home/blaze/Sites/helen/easycamp/mvp/app'
+let g:netrw_dirhist_3='/home/blaze/Sites/helen/easycamp/mvp/app/provider2/courses'
+let g:netrw_dirhist_4='/home/blaze/Sites/helen/easycamp/mvp/app/provider2'
+let g:netrw_dirhist_5='/home/blaze/Sites/helen/easycamp/mvp/app/provider2/sections'

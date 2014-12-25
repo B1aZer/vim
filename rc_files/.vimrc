@@ -160,3 +160,6 @@ let g:airline_powerline_fonts = 1
 
 " Dont pair " in vim files
 let g:autoclose_vim_commentmode = 1
+
+" Always sow status
+set laststatus=2
