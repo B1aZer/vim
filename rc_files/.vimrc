@@ -120,6 +120,9 @@ if has("autocmd")
   " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
   au FileType python setlocal tabstop=4 shiftwidth=4
 
+  " git commits
+  au Filetype gitcommit setlocal spell textwidth=72
+
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
