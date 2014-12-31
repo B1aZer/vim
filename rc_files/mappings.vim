@@ -51,6 +51,16 @@ inoremap <A-j>   <Esc>  : tabprevious<CR>i
 inoremap <A-k>   <Esc>  : tabnext<CR>i
 inoremap <C-t>   <Esc>  : tabnew<CR>
 
+if has('mac')
+
+  nnoremap <D-j>           : tabprevious<CR>
+  nnoremap <D-k>           : tabnext<CR>
+
+  inoremap <D-j>   <Esc>  : tabprevious<CR>i
+  inoremap <D-k>   <Esc>  : tabnext<CR>i
+
+endif
+
 map  <A-0> 0gt
 imap <A-0> <Esc>0gt
 map  <A-1> 1gt
