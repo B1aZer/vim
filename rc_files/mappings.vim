@@ -173,3 +173,15 @@ nmap <leader>y yiw
 
 " Spell check
 nnoremap <leader><F4> :setlocal spell!<cr>
+
+" fold
+nnoremap <leader>ff za
+nnoremap <leader>fc zc
+nnoremap <leader>fo zo
+nnoremap <leader>fF zA
+nnoremap <leader>fC zC
+nnoremap <leader>fO zO
+
+"dont yank
+"vnoremap <leader>x "_x
+
