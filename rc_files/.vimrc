@@ -166,3 +166,6 @@ let g:autoclose_vim_commentmode = 1
 
 " Always sow status
 set laststatus=2
+
+" Dont repeat ever
+let g:hardtime_default_on = 1
