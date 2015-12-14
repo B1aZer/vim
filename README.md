@@ -7,4 +7,4 @@
 [from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
 # on oher machine
-2. git submodule foreach git pull origin master (updates all modules)
+1. git submodule foreach git pull origin master (updates all modules)
