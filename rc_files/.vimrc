@@ -123,6 +123,12 @@ if has("autocmd")
   " git commits
   au Filetype gitcommit setlocal spell textwidth=72
 
+  " html
+  au Filetype html setlocal spell
+
+  " txt
+  au FileType txt setlocal spell
+
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
@@ -169,3 +175,7 @@ set laststatus=2
 
 " Dont repeat ever
 let g:hardtime_default_on = 1
+let g:hardtime_allow_different_key = 1
+
+" Relative numbers
+set relativenumber

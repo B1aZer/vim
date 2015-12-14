@@ -1,3 +1,19 @@
+"USED with leader:
+"e*
+"f*
+"c*
+"w*
+"a*
+"h
+"j
+"k
+"l
+"r
+"q
+"g*
+"0
+"s
+
 let mapleader = "\<Space>"
 
 " Expand region pligun bind o v
@@ -165,10 +181,10 @@ nmap <leader>0 ^
 " nnoremap ` '
 
 "Yanks mappings
-"nmap <leader>p <Plug>yankstack_substitute_older_paste
-"nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nmap <leader>p ciw<C-R>0<Esc>b
+"nmap <leader>P "0P
 
-nmap <leader>y yiw
+nmap <leader>w yiw
 " nmap gp "zviwp
 
 " Spell check
@@ -184,4 +200,7 @@ nnoremap <leader>fO zO
 
 "dont yank
 "vnoremap <leader>x "_x
+
+"Registers cycle
+"noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
