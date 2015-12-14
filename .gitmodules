@@ -73,3 +73,6 @@
 [submodule "bundle/vim-hardtime"]
 	path = bundle/vim-hardtime
 	url = git@github.com:takac/vim-hardtime.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx
