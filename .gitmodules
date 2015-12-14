@@ -70,9 +70,9 @@
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
-[submodule "bundle/vim-hardtime"]
-	path = bundle/vim-hardtime
-	url = git@github.com:takac/vim-hardtime.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
+[submodule "bundle/vim-hardtime"]
+	path = bundle/vim-hardtime
+	url = https://github.com/takac/vim-hardtime
