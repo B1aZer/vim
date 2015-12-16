@@ -204,3 +204,6 @@ nnoremap <leader>fO zO
 "Registers cycle
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
+" remapping snipmate to other key
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
