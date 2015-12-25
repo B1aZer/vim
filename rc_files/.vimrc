@@ -70,8 +70,11 @@ set splitright
 "" Wild settings
 ""
 
-" TODO: Investigate the precise meaning of these settings
+" Command line autocompletion
 " set wildmode=list:longest,list:full
+set wildmode=longest,list,full
+set wildmenu
+
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -133,6 +136,7 @@ if has("autocmd")
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
+
 endif
 
 let g:session_autosave = 'yes'
@@ -162,7 +166,7 @@ set autochdir
 " Extra white space color
 hi ExtraWhitespace guibg=#990000 ctermbg=red
 
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+" let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
 " Powerline fonts
 let g:airline_powerline_fonts = 1
@@ -179,3 +183,6 @@ let g:hardtime_allow_different_key = 1
 
 " Relative numbers
 set relativenumber
+
+"es6 support
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
