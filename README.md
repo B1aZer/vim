@@ -7,4 +7,5 @@
 [from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
 # on oher machine
+0. git submodule update --init
 1. git submodule foreach git pull origin master (updates all modules)
