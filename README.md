@@ -6,6 +6,10 @@
 3. git commit -m "Install Fugitive.vim bundle as a submodule."
 [from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
-# on oher machine
+# on oher machine #
 0. git submodule update --init
 1. git submodule foreach git pull origin master (updates all modules)
+
+# update submodules #
+1. git pull --recurse-submodules
+2. git submodule update --recursive
