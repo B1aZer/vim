@@ -58,12 +58,6 @@
 [submodule "bundle/vim-session"]
 	path = bundle/vim-session
 	url = git@github.com:xolox/vim-session.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = git@github.com:garbas/vim-snipmate.git
-[submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
