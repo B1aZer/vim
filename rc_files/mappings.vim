@@ -187,6 +187,8 @@ nmap <leader>p ciw<C-R>0<Esc>b
 nmap <leader>w yiw
 " nmap gp "zviwp
 
+nmap <leader>c ciw
+
 " Spell check
 nnoremap <leader><F4> :setlocal spell!<cr>
 
