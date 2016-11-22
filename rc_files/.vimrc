@@ -161,7 +161,7 @@ let g:netrw_mousemaps = 0
 " let g:netrw_liststyle=3
 
 " Change directory to the current buffer when opening files.
-set autochdir
+" set autochdir
 
 " Extra white space color
 hi ExtraWhitespace guibg=#990000 ctermbg=red
@@ -178,11 +178,22 @@ let g:autoclose_vim_commentmode = 1
 set laststatus=2
 
 " Dont repeat ever
-let g:hardtime_default_on = 1
-let g:hardtime_allow_different_key = 1
+" let g:hardtime_default_on = 1
+" let g:hardtime_allow_different_key = 1
 
 " Relative numbers
 set relativenumber
 
 "es6 support
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+
+" python lint
+let g:syntastic_python_checkers = ['pylint']
+
+" Trigger configuration. Do not use <tab> if you use
+let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-f>"
+
+" webpack
+set backupcopy=yes

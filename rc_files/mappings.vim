@@ -1,3 +1,8 @@
+" USEFUL
+" :e #
+" opens same file
+" `[ `] goto paste location
+"
 "USED with leader:
 "e*
 "f*
@@ -15,6 +20,8 @@
 "s
 
 let mapleader = "\<Space>"
+
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Expand region pligun bind o v
 vmap v <Plug>(expand_region_expand)
@@ -199,11 +206,9 @@ nnoremap <leader>fC zC
 nnoremap <leader>fO zO
 
 "dont yank
-"vnoremap <leader>x "_x
+vnoremap <leader>d "_d
 
 "Registers cycle
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
-" remapping snipmate to other key
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
+nnoremap <leader>gr :Ggr 
