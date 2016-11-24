@@ -1,8 +1,3 @@
-" USEFUL
-" :e #
-" opens same file
-" `[ `] goto paste location
-"
 "USED with leader:
 "e*
 "f*
@@ -165,16 +160,17 @@ cmap w!! w !sudo tee % >/dev/null
 " fugitive
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
-"nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gg :Gcommit<CR>
+nnoremap <leader>gr :Ggr 
 "nnoremap <silent> <leader>gb :Gblame<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
 "nnoremap <silent> <leader>gr :Gread<CR>
-"nnoremap <silent> <leader>gw :Gwrite<CR>
+nnoremap <silent> <leader>ga :Gwrite<CR>
 "nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 "nnoremap <silent> <leader>gi :Git add -p %<CR>
-"nnoremap <silent> <leader>gg :SignifyToggle<CR>
+"nnoremap <silent> <leader>gc :SignifyToggle<CR>
 
 " Relad syntax
 noremap <F11> <Esc>:syntax sync fromstart<CR>
@@ -211,4 +207,6 @@ vnoremap <leader>d "_d
 "Registers cycle
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
-nnoremap <leader>gr :Ggr 
+" JsDoc
+nnoremap <silent> <leader>js :JsDoc<cr>
+"nnoremap <silent> <leader>js <Plug>(jsdoc)

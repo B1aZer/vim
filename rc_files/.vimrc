@@ -197,3 +197,10 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 
 " webpack
 set backupcopy=yes
+
+" JSDOC
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_return_description = 0
+
+" open grep results in new tabs
+set switchbuf+=usetab,newtab

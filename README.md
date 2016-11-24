@@ -13,3 +13,15 @@
 # update submodules #
 1. git pull --recurse-submodules
 2. git submodule update --recursive
+
+
+USEFUL:
+ :e #
+ opens same file
+ `[ `] goto paste location
+ c-j snippet (after tab)
+ :JsDoc
+ leader gd
+        gr
+        gs
+
