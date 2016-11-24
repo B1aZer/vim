@@ -204,3 +204,6 @@ let g:jsdoc_return_description = 0
 
 " open grep results in new tabs
 set switchbuf+=usetab,newtab
+
+" camelCaseMotion
+call camelcasemotion#CreateMotionMappings('<leader>')

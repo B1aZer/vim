@@ -25,3 +25,4 @@ USEFUL:
         gr
         gs
 
+camelcasemot leadr w e
