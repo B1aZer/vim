@@ -206,4 +206,7 @@ let g:jsdoc_return_description = 0
 set switchbuf+=usetab,newtab
 
 " camelCaseMotion
-call camelcasemotion#CreateMotionMappings('<leader>')
+" call camelcasemotion#CreateMotionMappings('<leader>')
+
+"bufferagator
+let g:buffergator_display_regime = "bufname"

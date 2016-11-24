@@ -210,3 +210,10 @@ vnoremap <leader>d "_d
 " JsDoc
 nnoremap <silent> <leader>js :JsDoc<cr>
 "nnoremap <silent> <leader>js <Plug>(jsdoc)
+
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
