@@ -190,10 +190,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 " python lint
 let g:syntastic_python_checkers = ['pylint']
 
-" Trigger configuration. Do not use <tab> if you use
-let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-f>"
+" Trigger configuration. Do not use <tab> if you use YouCompleteMe
+let g:UltiSnipsExpandTrigger="<c-space>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " webpack
 set backupcopy=yes

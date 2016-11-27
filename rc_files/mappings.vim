@@ -189,16 +189,23 @@ nmap <leader>p ciw<C-R>0<Esc>b
 
 nmap <leader>w yiw
 " nmap gp "zviwp
+nmap <leader>c ciw
 
 " Spell check
 nnoremap <leader><F4> :setlocal spell!<cr>
 
 " fold
+" toggle current fold
 nnoremap <leader>ff za
+" close current fold
 nnoremap <leader>fc zc
+" open current fold
 nnoremap <leader>fo zo
+" toggle current fold recursively
 nnoremap <leader>fF zA
+" close current fold recursively
 nnoremap <leader>fC zC
+" open current fold recursively
 nnoremap <leader>fO zO
 
 "dont yank
@@ -217,3 +224,6 @@ map <silent> e <Plug>CamelCaseMotion_e
 sunmap w
 sunmap b
 sunmap e
+
+" last edit poistion
+nnoremap <leader>z `^

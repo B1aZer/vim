@@ -19,14 +19,27 @@ USEFUL:
  :e #
  opens same file
  `[ `] goto paste location
- c-j snippet (after tab)
- :JsDoc
+ c-space snippet
+ :JsDoc leader/js
  leader gd
         gr
         gs
  buff leader/b
+ ]] good for indents
+
+ Text objects
+ http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
+
+ daw, yaw
+
+ Vim’s text objects provide an incredible level of precision.
+ The key is to try to always edit by text objects. Editing by motions e.g.,
+ by part of a line, to the next occurrence of a character, is tedious, clumsy, and slow.
+ Instead of correcting a misspelling character by character, change the entire word and re-type it.
 
  Supertab most likely unused
+
+ Use Fn snippets
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
