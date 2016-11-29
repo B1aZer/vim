@@ -229,3 +229,24 @@ let g:pastedtext_select_key = 'p'
 
 " save marks
 "set viminfo='100,f1
+
+" dont save buffers to sessions
+set sessionoptions-=buffers
+
+let g:ctrlp_working_path_mode = 'r'
+
+set wildignore+=*/tmp/*,*/undodir/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*\\undodir\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|undodir)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|mov|psd)$',
+  \ }
+
+" speed up ctrlP
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+
+let g:airline#extensions#tabline#enabled = 1

@@ -15,17 +15,40 @@
 2. git submodule update --recursive
 
 
-USEFUL:
- :e #
- opens same file
- `[ `] goto paste location
- c-space snippet
- :JsDoc leader/js
- leader gd
-        gr
-        gs
- buff leader/b
- ]] good for indents
+#USEFUL:
+
+ - :e # edit last used (alias) buffer
+ - `[ `] goto paste location
+ - [` ]` next/prev mark
+ - [z ]z next/prev fold. Would work even on hidden folds
+ - c-space expose snippet
+ - :JsDoc leader/js
+ - git:
+   leader gd
+          gr
+          gs
+ - ]] good for indents
+ -
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,\zs<CR>
+  vmap <Leader>a, :Tabularize /,\zs<CR>
+
+ ============
+
+Motions
+
+ The most quick motion is easymotions
+
+ es-f
+ es-/ (if there are multiple occurences of the word)
+ and so on
+
+ ==============
+
+The most quick way to select object is to use:
 
  Text objects
  http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/
@@ -37,14 +60,13 @@ USEFUL:
  by part of a line, to the next occurrence of a character, is tedious, clumsy, and slow.
  Instead of correcting a misspelling character by character, change the entire word and re-type it.
 
- Use Fn snippets
-
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
-
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+#TODO
+
+- Make use of folds. More useful folding. Lern bindings. Use marks. Use as text objects
+- Make standard paired bindings to all common commands, similar to unimpared
+- spell is not working <leader>F4
+- Use Fn snippets
+

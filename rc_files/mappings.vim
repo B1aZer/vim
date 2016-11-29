@@ -61,21 +61,23 @@ map <Leader>= <C-w>=
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 " tab navigation like firefox
-nnoremap <A-j>           : tabprevious<CR>
-nnoremap <A-k>           : tabnext<CR>
-nnoremap <C-t>           : tabnew<CR>
+nnoremap <A-j>           : bnext<CR>
+nnoremap <A-k>           : bprevious<CR>
+nnoremap <C-t>           : enew<CR>
 
-inoremap <A-j>   <Esc>  : tabprevious<CR>i
-inoremap <A-k>   <Esc>  : tabnext<CR>i
-inoremap <C-t>   <Esc>  : tabnew<CR>
+inoremap <A-j>   <Esc>  : bprevious<CR>i
+inoremap <A-k>   <Esc>  : bnext<CR>i
+inoremap <C-t>   <Esc>  : enew<CR>
+
+nnoremap <leader>bq :bp <BAR> bd #<CR>
 
 if has('mac')
 
-  nnoremap <D-j>           : tabprevious<CR>
-  nnoremap <D-k>           : tabnext<CR>
+  nnoremap <D-j>           : bprevious<CR>
+  nnoremap <D-k>           : bnext<CR>
 
-  inoremap <D-j>   <Esc>  : tabprevious<CR>i
-  inoremap <D-k>   <Esc>  : tabnext<CR>i
+  inoremap <D-j>   <Esc>  : bprevious<CR>i
+  inoremap <D-k>   <Esc>  : bnext<CR>i
 
 endif
 
@@ -104,10 +106,10 @@ imap <A-9> <Esc>9gt
 nnoremap K i<cr><esc>k$
 
 " Move tabs with alt + left|right
-nnoremap <silent> <C-H> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-L> :execute 'silent! tabmove ' . tabpagenr()<CR>
-nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
+"nnoremap <silent> <C-H> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+"nnoremap <silent> <C-L> :execute 'silent! tabmove ' . tabpagenr()<CR>
+"nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+"nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 map <silent> <A-n> :Lexplore<CR>
 
@@ -150,6 +152,8 @@ map <silent> <leader>qq :q!<CR>
 " Easy movings
 map <Leader><Leader>l <Plug>(easymotion-lineforward)
 map <Leader><Leader>h <Plug>(easymotion-linebackward)
+map <leader><leader>/ <Plug>(incsearch-easymotion-/)
+map <leader><leader>? <Plug>(incsearch-easymotion-?)
 
 " Past from yank buffer
 imap <C-R><C-R> <C-R>"
@@ -258,3 +262,10 @@ nnoremap <silent> <leader>qc :cclose<CR>
 " Prev/Next change
 nnoremap <leader>[ g;
 nnoremap <leader>] g,
+
+nnoremap <leader>ls :ls<CR>
+
+" Easy bindings for its various modes
+"nmap <leader>bb :CtrlPBuffer<cr>
+"nmap <leader>bm :CtrlPMixed<cr>
+"nmap <leader>bs :CtrlPMRU<cr>
