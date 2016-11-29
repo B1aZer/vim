@@ -261,8 +261,8 @@ nmap <silent> <leader>vr :so %<CR>
 nnoremap <silent> <leader>qc :cclose<CR>
 
 " Prev/Next change
-nnoremap <leader>[ g;
-nnoremap <leader>] g,
+nnoremap [c g;
+nnoremap ]c g,
 
 nnoremap <leader>ls :ls<CR>
 

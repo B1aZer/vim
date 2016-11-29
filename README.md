@@ -19,8 +19,9 @@
 
  - :e # edit last used (alias) buffer
  - [p ]p goto paste location
- - [` ]` next/prev mark
+ - [\` ]\` next/prev mark
  - [z ]z next/prev fold. Would work even on hidden folds
+ - [c ]c next/prev change
  - c-space expose snippet
  - :JsDoc leader/js
  - git: leader gd gr gs
