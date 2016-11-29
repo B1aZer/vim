@@ -103,3 +103,6 @@
 [submodule "bundle/vim-textobj-pastedtext"]
 	path = bundle/vim-textobj-pastedtext
 	url = git@github.com:saaguero/vim-textobj-pastedtext.git
+[submodule "bundle/vim-signature"]
+	path = bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
