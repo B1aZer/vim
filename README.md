@@ -18,7 +18,7 @@
 # USEFUL: #
 
  - :e # edit last used (alias) buffer
- - `[ `] goto paste location
+ - [p ]p goto paste location
  - [` ]` next/prev mark
  - [z ]z next/prev fold. Would work even on hidden folds
  - c-space expose snippet
@@ -35,6 +35,19 @@
  nmap <Leader>a, :Tabularize /,\zs<CR>
  vmap <Leader>a, :Tabularize /,\zs<CR>
  ```
+
+ ```
+ [<Space>                Add [count] blank lines above the cursor.
+ *]<Space>*
+ ]<Space>                Add [count] blank lines below the cursor.
+ *[e* *v_[e*
+ [e                      Exchange the current line with [count] lines above it.
+ *]e* *v_]e*
+ ]e                      Exchange the current line with [count] lines below it.
+ ```
+# Don't Use Tabs, Only Buffers #
+
+http://vim.wikia.com/wiki/Vim_buffer_FAQ
 
 # Motions #
 
@@ -71,5 +84,5 @@ The most quick way to select object is to use:
 - CtrlP is slow and not really useful
 - Somehow the smae buffer is always opens
 - New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
-- Check for usefule mappings: https://github.com/skwp/dotfiles
+- Check for useful mappings: https://github.com/skwp/dotfiles
 

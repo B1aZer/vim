@@ -270,3 +270,7 @@ nnoremap <leader>ls :ls<CR>
 "nmap <leader>bb :CtrlPBuffer<cr>
 "nmap <leader>bm :CtrlPMixed<cr>
 "nmap <leader>bs :CtrlPMRU<cr>
+
+" go to past locations, to be consistent with unimpared
+nnoremap [p `[
+nnoremap ]p `]
