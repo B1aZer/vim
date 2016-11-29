@@ -83,7 +83,7 @@ The most quick way to select object is to use:
 - Make standard paired bindings to all common commands, similar to unimpared
 - spell is not working <leader>F4
 - CtrlP is slow and not really useful
-- Somehow the smae buffer is always opens
+- ~~Somehow the smae buffer is always opens~~ (Able to resolve with new :BW command)
 - New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
 - Check for useful mappings: https://github.com/skwp/dotfiles
 

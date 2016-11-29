@@ -225,6 +225,7 @@ call textobj#user#plugin('tags', {
 \ })
 
 " pasted text object, =p
+" not really works with ctrl v
 let g:pastedtext_select_key = 'p'
 
 " save marks
@@ -238,6 +239,7 @@ let g:ctrlp_working_path_mode = 'r'
 set wildignore+=*/tmp/*,*/undodir/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*\\undodir\\*,*.swp,*.zip,*.exe  " Windows
 
+" not sure if works properly
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|undodir)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|mov|psd)$',
@@ -249,4 +251,8 @@ let g:ctrlp_custom_ignore = {
 "   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " endif
 
+" show tab name at the top
 let g:airline#extensions#tabline#enabled = 1
+
+" this command needed to unload a buffer
+command -nargs=? -bang BW :silent! argd % | bw<bang><args>

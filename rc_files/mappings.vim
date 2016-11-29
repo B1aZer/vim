@@ -274,3 +274,5 @@ nnoremap <leader>ls :ls<CR>
 " go to past locations, to be consistent with unimpared
 nnoremap [p `[
 nnoremap ]p `]
+
+"map /  <Plug>(incsearch-forward)
