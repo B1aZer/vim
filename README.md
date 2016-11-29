@@ -25,6 +25,8 @@
  - :JsDoc leader/js
  - git: leader gd gr gs
  - ]] good for indents
+ - Use Fn snippets. https://github.com/honza/vim-snippets/tree/master/UltiSnips
+
  ```
  nmap <Leader>a= :Tabularize /=<CR>
  vmap <Leader>a= :Tabularize /=<CR>
@@ -63,8 +65,11 @@ The most quick way to select object is to use:
 
 # TODO #
 
-- Make use of folds. More useful folding. Lern bindings. Use marks. Use as text objects
+- Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
 - Make standard paired bindings to all common commands, similar to unimpared
 - spell is not working <leader>F4
-- Use Fn snippets
+- CtrlP is slow and not really useful
+- Somehow the smae buffer is always opens
+- New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
+- Check for usefule mappings: https://github.com/skwp/dotfiles
 

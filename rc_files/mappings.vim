@@ -69,8 +69,6 @@ inoremap <A-j>   <Esc>  : bprevious<CR>i
 inoremap <A-k>   <Esc>  : bnext<CR>i
 inoremap <C-t>   <Esc>  : enew<CR>
 
-nnoremap <leader>bq :bp <BAR> bd #<CR>
-
 if has('mac')
 
   nnoremap <D-j>           : bprevious<CR>
@@ -110,6 +108,8 @@ nnoremap K i<cr><esc>k$
 "nnoremap <silent> <C-L> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <C-K> <C-Y>
+nnoremap <C-J> <C-E>
 
 map <silent> <A-n> :Lexplore<CR>
 
@@ -146,7 +146,8 @@ map <leader>2k <C-W>2k
 map <leader>2l <C-W>2l
 
 " Close window
-map <leader>q <c-w>q
+"map <leader>q <c-w>q
+nmap <leader>q :bp <BAR> bd #<CR>
 map <silent> <leader>qq :q!<CR>
 
 " Easy movings
