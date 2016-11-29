@@ -37,8 +37,6 @@ USEFUL:
  by part of a line, to the next occurrence of a character, is tedious, clumsy, and slow.
  Instead of correcting a misspelling character by character, change the entire word and re-type it.
 
- Supertab most likely unused
-
  Use Fn snippets
 
 nmap <Leader>a= :Tabularize /=<CR>

@@ -184,7 +184,8 @@ nmap <leader>0 ^
 " nnoremap ` '
 
 "Yanks mappings
-nmap <leader>p ciw<C-R>0<Esc>b
+"nmap <leader>p ciw<C-R>0<Esc>b
+nnoremap <leader>p "_diwhp
 "nmap <leader>P "0P
 
 nmap <leader>w yiw
@@ -197,16 +198,20 @@ nnoremap <leader><F4> :setlocal spell!<cr>
 " fold
 " toggle current fold
 nnoremap <leader>ff za
+" create fold around indent
+nnoremap <leader>fc zfai
+" delete current fold
+nnoremap <leader>fd zD
 " close current fold
-nnoremap <leader>fc zc
+"nnoremap <leader>fc zc
 " open current fold
-nnoremap <leader>fo zo
+"nnoremap <leader>fo zo
 " toggle current fold recursively
-nnoremap <leader>fF zA
+"nnoremap <leader>fF zA
 " close current fold recursively
-nnoremap <leader>fC zC
+"nnoremap <leader>fC zC
 " open current fold recursively
-nnoremap <leader>fO zO
+"nnoremap <leader>fO zO
 
 "dont yank
 vnoremap <leader>d "_d
@@ -227,3 +232,29 @@ sunmap e
 
 " last edit poistion
 nnoremap <leader>z `^
+
+" Make 0 go to the first character rather than the beginning
+" of the line. When we're programming, we're almost always
+" interested in working with text rather than empty space. If
+" you want the traditional beginning of line, use ^
+nnoremap 0 ^
+nnoremap ^ 0
+
+"When typing a string, your quotes auto complete. Move past the quote
+"while still in insert mode by hitting Ctrl-a. Example:
+"
+" type 'foo<c-a>
+"
+" the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
+" put the cursor right after the quote
+imap <C-a> <esc>wa
+
+"(v)im (r)eload
+nmap <silent> <leader>vr :so %<CR>
+
+" cloase quick window
+nnoremap <silent> <leader>qc :cclose<CR>
+
+" Prev/Next change
+nnoremap <leader>[ g;
+nnoremap <leader>] g,

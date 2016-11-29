@@ -210,3 +210,22 @@ set switchbuf+=usetab,newtab
 
 "bufferagator
 let g:buffergator_display_regime = "bufname"
+
+"indent show <leader>ig
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+" Select tag attribute as text object
+call textobj#user#plugin('tags', {
+\   'attribute': {
+\     'pattern': '\S\+=".\{-}"',
+\     'select': ['aa', 'ia'],
+\   }
+\ })
+
+" pasted text object, =p
+let g:pastedtext_select_key = 'p'
+
+" save marks
+"set viminfo='100,f1
