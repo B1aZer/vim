@@ -81,9 +81,11 @@ The most quick way to select object is to use:
 
 - Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
 - Make standard paired bindings to all common commands, similar to unimpared
-- spell is not working <leader>F4
+- ~~spell is not working <leader>F4~~ (problem with keyboard swap-fx)
 - CtrlP is slow and not really useful
 - ~~Somehow the smae buffer is always opens~~ (Able to resolve with new :BW command)
 - New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
 - Check for useful mappings: https://github.com/skwp/dotfiles
+- Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
 
+http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim#answer-1220118

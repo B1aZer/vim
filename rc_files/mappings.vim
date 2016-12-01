@@ -191,6 +191,7 @@ nmap <leader>0 ^
 "Yanks mappings
 "nmap <leader>p ciw<C-R>0<Esc>b
 nnoremap <leader>p "_diwhp
+"nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
 
 nmap <leader>w yiw
@@ -252,7 +253,7 @@ nnoremap ^ 0
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-imap <C-a> <esc>wa
+imap <C-a> <esc>la
 
 "(v)im (r)eload
 nmap <silent> <leader>vr :so %<CR>
