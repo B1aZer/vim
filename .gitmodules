@@ -115,3 +115,6 @@
 [submodule "bundle/vim-yankstack"]
 	path = bundle/vim-yankstack
 	url = git@github.com:maxbrunsfeld/vim-yankstack.git
+[submodule "vim-repmo"]
+	path = vim-repmo
+	url = git@github.com:Houl/vim-repmo.git
