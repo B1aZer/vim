@@ -277,3 +277,21 @@ nnoremap [p `[
 nnoremap ]p `]
 
 "map /  <Plug>(incsearch-forward)
+
+" map a motion and its reverse motion:
+noremap <expr> h repmo#Key('h', 'l')|sunmap h
+noremap <expr> l repmo#Key('l', 'h')|sunmap l
+
+" if you like `:noremap j gj', you can keep that:
+noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
+noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
+
+" repeat the last [count]motion or the last zap-key:
+noremap <expr> ; repmo#LastKey(';')|sunmap ;
+noremap <expr> , repmo#LastRevKey(',')|sunmap ,
+
+" add these mappings when repeating with `;' or `,':
+noremap <expr> f repmo#ZapKey('f')|sunmap f
+noremap <expr> F repmo#ZapKey('F')|sunmap F
+noremap <expr> t repmo#ZapKey('t')|sunmap t
+noremap <expr> T repmo#ZapKey('T')|sunmap T
