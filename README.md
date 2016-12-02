@@ -35,6 +35,7 @@
    ds - delete surront
    on any text object
  - aa - around attr object (for html)
+ - v_o - o in visual mode goes to the other side of selection
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
