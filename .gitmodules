@@ -118,3 +118,9 @@
 [submodule "/home/blaze/.vim/bundle/vim-javascript"]
 	path = /home/blaze/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "/home/blaze/.vim/bundle/vim-bufferline"]
+	path = /home/blaze/.vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git

@@ -35,12 +35,12 @@ vmap <silent> <expr> p <sid>Repl()
 
 " expand to current working directory
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>e :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+"map <leader>e :e %%
+"map <leader>es :sp %%
+"map <leader>ev :vsp %%
+"map <leader>et :tabe %%
 
-map <silent> <leader>ee :Explore<CR>
+"map <silent> <leader>ee :Explore<CR>
 
 " format the entire file
 nnoremap <leader>fef :normal! gg=G``<CR>
@@ -49,7 +49,7 @@ nnoremap <leader>fef :normal! gg=G``<CR>
 nmap <leader>cd :lcd %:h<CR>
 
 " set text wrapping toggles
-nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
+"nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
 
 " Toggle hlsearch with <leader>hs
 nmap <leader><F3> :set hlsearch! hlsearch?<CR>
@@ -194,9 +194,9 @@ nnoremap <leader>p "_diwhp
 "nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
 
-nmap <leader>w yiw
+"nmap <leader>w yiw
 " nmap gp "zviwp
-nmap <leader>c ciw
+"nmap <leader>c ciw
 
 " Spell check
 nnoremap <leader><F4> :setlocal spell!<cr>
@@ -204,20 +204,20 @@ nnoremap <leader><F4> :setlocal spell!<cr>
 " fold
 " toggle current fold
 nnoremap <leader>ff za
-" create fold around indent
-nnoremap <leader>fc zfai
+" close all
+nnoremap <leader>fc zM
 " delete current fold
-nnoremap <leader>fd zD
+"nnoremap <leader>fd zD
 " close current fold
 "nnoremap <leader>fc zc
 " open current fold
 "nnoremap <leader>fo zo
 " toggle current fold recursively
-"nnoremap <leader>fF zA
+nnoremap <leader>fF zA
 " close current fold recursively
 "nnoremap <leader>fC zC
-" open current fold recursively
-"nnoremap <leader>fO zO
+" open all recursively
+nnoremap <leader>fo zR
 
 "dont yank
 vnoremap <leader>d "_d
@@ -226,15 +226,15 @@ vnoremap <leader>d "_d
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
 " JsDoc
-nnoremap <silent> <leader>js :JsDoc<cr>
+nnoremap <silent> <leader>JS :JsDoc<cr>
 "nnoremap <silent> <leader>js <Plug>(jsdoc)
 
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
+map <silent> <leader>w <Plug>CamelCaseMotion_w
+map <silent> <leader>b <Plug>CamelCaseMotion_b
+map <silent> <leader>e <Plug>CamelCaseMotion_e
+"sunmap w
+"sunmap b
+"sunmap e
 
 " last edit poistion
 nnoremap <leader>z `^
@@ -265,6 +265,14 @@ nnoremap <silent> <leader>qc :cclose<CR>
 nnoremap [c g;
 nnoremap ]c g,
 
+" setting folding
+noremap ]f zr
+noremap [f zm
+
+" go to past locations, to be consistent with unimpared
+nnoremap [p `[
+nnoremap ]p `]
+
 nnoremap <leader>ls :ls<CR>
 
 " Easy bindings for its various modes
@@ -272,11 +280,9 @@ nnoremap <leader>ls :ls<CR>
 "nmap <leader>bm :CtrlPMixed<cr>
 "nmap <leader>bs :CtrlPMRU<cr>
 
-" go to past locations, to be consistent with unimpared
-nnoremap [p `[
-nnoremap ]p `]
-
 "map /  <Plug>(incsearch-forward)
+
+" UNDO PLUGIN
 
 " map a motion and its reverse motion:
 noremap <expr> h repmo#Key('h', 'l')|sunmap h
@@ -296,8 +302,24 @@ noremap <expr> F repmo#ZapKey('F')|sunmap F
 noremap <expr> t repmo#ZapKey('t')|sunmap t
 noremap <expr> T repmo#ZapKey('T')|sunmap T
 
-" set dafault mode for ctrlP
-let g:ctrlp_cmd = 'CtrlPMRU'
+" Go to next close fold
+nnoremap <silent> zj :call NextClosedFold('j')<cr>
+nnoremap <silent> zk :call NextClosedFold('k')<cr>
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 && open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) < 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
 
-" set indeng guides width
-let g:indent_guides_guide_size = 1
+let g:ctrlp_prompt_mappings = {
+  \ 'ToggleType(1)':        ['<c-f>', '<a-k>'],
+  \ 'ToggleType(-1)':       ['<c-b>', '<a-j>'],
+  \ }

@@ -17,16 +17,24 @@
 
 # USEFUL: #
 
+ - ctrl+[ - escape!
  - :e # edit last used (alias) buffer
  - [p ]p goto paste location
  - [\` ]\` next/prev mark
- - [z ]z next/prev fold. Would work even on hidden folds
+ - [z ]z next/prev open fold. Would work even on hidden folds
+ - zj, zk nex/prev fold
  - [c ]c next/prev change
  - c-space expose snippet
  - :JsDoc leader/js
  - git: leader gd gr gs
  - ]] good for indents
  - Use Fn snippets. https://github.com/honza/vim-snippets/tree/master/UltiSnips
+ - Use surroundings: https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
+   ys - you sourround
+   cs - change surround
+   ds - delete surront
+   on any text object
+ - aa - around attr object (for html)
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
@@ -51,6 +59,8 @@
 http://vim.wikia.com/wiki/Vim_buffer_FAQ
 
 # Motions #
+
+ !!! First rule of VIM - use motion as verb and action as noun !!!
 
  The most quick motion is easymotions
 

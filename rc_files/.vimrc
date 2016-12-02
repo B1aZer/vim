@@ -56,7 +56,7 @@ set smartcase   " ... unless they contain at least one capital letter
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
+"set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 ""
@@ -207,13 +207,13 @@ let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_return_description = 0
 
 " open grep results in new tabs
-set switchbuf+=usetab,newtab
+"set switchbuf+=usetab,newtab
 
 " camelCaseMotion
 " call camelcasemotion#CreateMotionMappings('<leader>')
 
 "bufferagator
-let g:buffergator_display_regime = "bufname"
+"let g:buffergator_display_regime = "bufname"
 
 "indent show <leader>ig
 "let g:indent_guides_auto_colors = 0
@@ -259,3 +259,9 @@ let g:ctrlp_custom_ignore = {
 command -nargs=? -bang BW :silent! argd % | bw<bang><args>
 
 let g:javascript_plugin_jsdoc = 1
+
+" set dafault mode for ctrlP
+let g:ctrlp_cmd = 'CtrlPMRU'
+
+" set indeng guides width
+let g:indent_guides_guide_size = 1
