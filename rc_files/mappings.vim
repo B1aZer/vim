@@ -61,8 +61,8 @@ map <Leader>= <C-w>=
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 " tab navigation like firefox
-nnoremap <A-j>           : bnext<CR>
-nnoremap <A-k>           : bprevious<CR>
+nnoremap <A-j>           : bprevious<CR>
+nnoremap <A-k>           : bnext<CR>
 nnoremap <C-t>           : enew<CR>
 
 inoremap <A-j>   <Esc>  : bprevious<CR>i
@@ -295,3 +295,9 @@ noremap <expr> f repmo#ZapKey('f')|sunmap f
 noremap <expr> F repmo#ZapKey('F')|sunmap F
 noremap <expr> t repmo#ZapKey('t')|sunmap t
 noremap <expr> T repmo#ZapKey('T')|sunmap T
+
+" set dafault mode for ctrlP
+let g:ctrlp_cmd = 'CtrlPMRU'
+
+" set indeng guides width
+let g:indent_guides_guide_size = 1

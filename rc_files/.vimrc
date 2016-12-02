@@ -171,6 +171,10 @@ hi ExtraWhitespace guibg=#990000 ctermbg=red
 " Powerline fonts
 let g:airline_powerline_fonts = 1
 
+" show tab name at the top
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+
 " Dont pair " in vim files
 let g:autoclose_vim_commentmode = 1
 
@@ -251,8 +255,7 @@ let g:ctrlp_custom_ignore = {
 "   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " endif
 
-" show tab name at the top
-let g:airline#extensions#tabline#enabled = 1
-
 " this command needed to unload a buffer
 command -nargs=? -bang BW :silent! argd % | bw<bang><args>
+
+let g:javascript_plugin_jsdoc = 1
