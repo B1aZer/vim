@@ -20,7 +20,7 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Expand region pligun bind o v
 vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+"vmap <C-v> <Plug>(expand_region_shrink)
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
@@ -282,7 +282,7 @@ nnoremap <leader>ls :ls<CR>
 
 "map /  <Plug>(incsearch-forward)
 
-" UNDO PLUGIN
+" RepMo
 
 " map a motion and its reverse motion:
 noremap <expr> h repmo#Key('h', 'l')|sunmap h
@@ -301,6 +301,8 @@ noremap <expr> f repmo#ZapKey('f')|sunmap f
 noremap <expr> F repmo#ZapKey('F')|sunmap F
 noremap <expr> t repmo#ZapKey('t')|sunmap t
 noremap <expr> T repmo#ZapKey('T')|sunmap T
+
+" End of RepMo
 
 " Go to next close fold
 nnoremap <silent> zj :call NextClosedFold('j')<cr>

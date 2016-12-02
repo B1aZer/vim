@@ -94,6 +94,8 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+set wildignore+=*/tmp/*,*/undodir/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*\\undodir\\*,*.swp,*.zip,*.exe  " Windows
 
 ""
 "" Backup and swap files
@@ -237,8 +239,8 @@ set sessionoptions-=buffers
 
 let g:ctrlp_working_path_mode = 'r'
 
-set wildignore+=*/tmp/*,*/undodir/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*\\undodir\\*,*.swp,*.zip,*.exe  " Windows
+" set dafault mode for ctrlP
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " not sure if works properly
 let g:ctrlp_custom_ignore = {
@@ -255,10 +257,17 @@ let g:ctrlp_custom_ignore = {
 " this command needed to unload a buffer
 command -nargs=? -bang BW :silent! argd % | bw<bang><args>
 
+" enable jsdoc plugin
 let g:javascript_plugin_jsdoc = 1
-
-" set dafault mode for ctrlP
-let g:ctrlp_cmd = 'CtrlPMRU'
 
 " set indeng guides width
 let g:indent_guides_guide_size = 1
+
+call expand_region#custom_text_objects({
+      \ "\/\\n\\n\<CR>": 1,
+      \ 'a]' :1,
+      \ 'ab' :1,
+      \ 'aB' :1,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
