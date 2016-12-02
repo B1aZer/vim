@@ -178,7 +178,7 @@ let g:airline#extensions#bufferline#enabled = 1
 " Dont pair " in vim files
 let g:autoclose_vim_commentmode = 1
 
-" Always sow status
+" Always show status
 set laststatus=2
 
 " Dont repeat ever
@@ -221,16 +221,13 @@ let g:jsdoc_return_description = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 " Select tag attribute as text object
+" Same as vaW (almost except for >)
 call textobj#user#plugin('tags', {
 \   'attribute': {
 \     'pattern': '\S\+=".\{-}"',
 \     'select': ['aa', 'ia'],
 \   }
 \ })
-
-" pasted text object, =p
-" not really works with ctrl v
-let g:pastedtext_select_key = 'p'
 
 " save marks
 "set viminfo='100,f1
