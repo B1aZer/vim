@@ -232,7 +232,7 @@ call textobj#user#plugin('tags', {
 \ })
 
 " save marks
-"set viminfo='100,f1
+"set viminfoviminfo='100,f1
 
 " dont save buffers to sessions
 set sessionoptions-=buffers
@@ -271,3 +271,27 @@ call expand_region#custom_text_objects({
       \ 'ii' :0,
       \ 'ai' :0,
       \ })
+
+let g:SignatureMap = {
+      \ 'Leader'             :  "m",
+      \ 'PlaceNextMark'      :  "m,",
+      \ 'ToggleMarkAtLine'   :  "m.",
+      \ 'PurgeMarksAtLine'   :  "m-",
+      \ 'DeleteMark'         :  "dm",
+      \ 'PurgeMarks'         :  "m<Space>",
+      \ 'PurgeMarkers'       :  "m<BS>",
+      \ 'GotoNextLineAlpha'  :  "",
+      \ 'GotoPrevLineAlpha'  :  "",
+      \ 'GotoNextSpotAlpha'  :  "",
+      \ 'GotoPrevSpotAlpha'  :  "",
+      \ 'GotoNextLineByPos'  :  "]'",
+      \ 'GotoPrevLineByPos'  :  "['",
+      \ 'GotoNextSpotByPos'  :  "]`",
+      \ 'GotoPrevSpotByPos'  :  "[`",
+      \ 'GotoNextMarker'     :  "]-",
+      \ 'GotoPrevMarker'     :  "[-",
+      \ 'GotoNextMarkerAny'  :  "]=",
+      \ 'GotoPrevMarkerAny'  :  "[=",
+      \ 'ListBufferMarks'    :  "m/",
+      \ 'ListBufferMarkers'  :  "m?"
+      \ }

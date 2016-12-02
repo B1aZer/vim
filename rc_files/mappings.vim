@@ -266,12 +266,12 @@ nnoremap [c g;
 nnoremap ]c g,
 
 " setting folding
-noremap ]f zr
-noremap [f zm
+"noremap ]f zr
+"noremap [f zm
 
 " go to past locations, to be consistent with unimpared
-nnoremap [p `[
-nnoremap ]p `]
+"nnoremap [p `[
+"nnoremap ]p `]
 
 nnoremap <leader>ls :ls<CR>
 
