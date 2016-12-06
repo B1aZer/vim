@@ -43,7 +43,7 @@ cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 "map <silent> <leader>ee :Explore<CR>
 
 " format the entire file
-nnoremap <leader>fef :normal! gg=G``<CR>
+"nnoremap <leader>fef :normal! gg=G``<CR>
 
 " cd to the directory containing the file in the buffer
 nmap <leader>cd :lcd %:h<CR>
@@ -55,12 +55,12 @@ nmap <leader>cd :lcd %:h<CR>
 nmap <leader><F3> :set hlsearch! hlsearch?<CR>
 
 " Adjust viewports to the same size
-map <Leader>= <C-w>=
+"map <Leader>= <C-w>=
 
 " Maximize split
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
-" tab navigation like firefox
+" buffer navigation like firefox
 nnoremap <A-j>           : bprevious<CR>
 nnoremap <A-k>           : bnext<CR>
 nnoremap <C-t>           : enew<CR>
@@ -79,26 +79,26 @@ if has('mac')
 
 endif
 
-map  <A-0> 0gt
-imap <A-0> <Esc>0gt
-map  <A-1> 1gt
-imap <A-1> <Esc>1gt
-map  <A-2> 2gt
-imap <A-2> <Esc>2gt
-map  <A-3> 3gt
-imap <A-3> <Esc>3gt
-map  <A-4> 4gt
-imap <A-4> <Esc>4gt
-map  <A-5> 5gt
-imap <A-5> <Esc>5gt
-map  <A-6> 6gt
-imap <A-6> <Esc>6gt
-map  <A-7> 7gt
-imap <A-7> <Esc>7gt
-map  <A-8> 8gt
-imap <A-8> <Esc>8gt
-map  <A-9> 9gt
-imap <A-9> <Esc>9gt
+"map  <A-0> 0gt
+"imap <A-0> <Esc>0gt
+"map  <A-1> 1gt
+"imap <A-1> <Esc>1gt
+"map  <A-2> 2gt
+"imap <A-2> <Esc>2gt
+"map  <A-3> 3gt
+"imap <A-3> <Esc>3gt
+"map  <A-4> 4gt
+"imap <A-4> <Esc>4gt
+"map  <A-5> 5gt
+"imap <A-5> <Esc>5gt
+"map  <A-6> 6gt
+"imap <A-6> <Esc>6gt
+"map  <A-7> 7gt
+"imap <A-7> <Esc>7gt
+"map  <A-8> 8gt
+"imap <A-8> <Esc>8gt
+"map  <A-9> 9gt
+"imap <A-9> <Esc>9gt
 
 "makes K split lines (the opposite of J)
 nnoremap K i<cr><esc>k$
@@ -108,10 +108,11 @@ nnoremap K i<cr><esc>k$
 "nnoremap <silent> <C-L> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "nnoremap <silent> <C-J> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 "nnoremap <silent> <C-K> :execute 'silent! tabmove ' . tabpagenr()<CR>
+" move up/down
 nnoremap <C-K> <C-Y>
 nnoremap <C-J> <C-E>
 
-map <silent> <A-n> :Lexplore<CR>
+"map <silent> <A-n> :Lexplore<CR>
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -147,7 +148,7 @@ map <leader>2l <C-W>2l
 
 " Close window
 "map <leader>q <c-w>q
-nmap <leader>q :bp <BAR> bd #<CR>
+"nmap <leader>q :bp <BAR> bd #<CR>
 map <silent> <leader>qq :q!<CR>
 
 " Easy movings
@@ -155,6 +156,7 @@ map <Leader><Leader>l <Plug>(easymotion-lineforward)
 map <Leader><Leader>h <Plug>(easymotion-linebackward)
 map <leader><leader>/ <Plug>(incsearch-easymotion-/)
 map <leader><leader>? <Plug>(incsearch-easymotion-?)
+map <leader><leader>; <Plug>(easymotion-repeat)
 
 " Past from yank buffer
 imap <C-R><C-R> <C-R>"
@@ -181,16 +183,13 @@ nnoremap <silent> <leader>ga :Gwrite<CR>
 noremap <F11> <Esc>:syntax sync fromstart<CR>
 inoremap <F11> <C-o>:syntax sync fromstart<CR>
 
-" Gpto beggining
-nmap <leader>0 ^
-
 " Remap ` to '
 " nnoremap ' `
 " nnoremap ` '
 
 "Yanks mappings
-"nmap <leader>p ciw<C-R>0<Esc>b
-nnoremap <leader>p "_diwhp
+nmap <leader>p ciw<C-R>0<Esc>b
+"nnoremap <leader>p "_diwhp
 "nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
 
@@ -203,9 +202,9 @@ nnoremap <leader><F4> :setlocal spell!<cr>
 
 " fold
 " toggle current fold
-nnoremap <leader>ff za
+"nnoremap <leader>ff za
 " close all
-nnoremap <leader>fc zM
+"nnoremap <leader>fc zM
 " delete current fold
 "nnoremap <leader>fd zD
 " close current fold
@@ -213,11 +212,11 @@ nnoremap <leader>fc zM
 " open current fold
 "nnoremap <leader>fo zo
 " toggle current fold recursively
-nnoremap <leader>fF zA
+"nnoremap <leader>fF zA
 " close current fold recursively
 "nnoremap <leader>fC zC
 " open all recursively
-nnoremap <leader>fo zR
+"nnoremap <leader>fo zR
 
 "dont yank
 vnoremap <leader>d "_d
@@ -237,7 +236,8 @@ map <silent> <leader>e <Plug>CamelCaseMotion_e
 "sunmap e
 
 " last edit poistion
-nnoremap <leader>z `^
+" have [c for this
+"nnoremap <leader>z `^
 
 " Make 0 go to the first character rather than the beginning
 " of the line. When we're programming, we're almost always
@@ -262,6 +262,7 @@ nmap <silent> <leader>vr :so %<CR>
 nnoremap <silent> <leader>qc :cclose<CR>
 
 " Prev/Next change
+" overwrites default mapping
 nnoremap [c g;
 nnoremap ]c g,
 
@@ -276,9 +277,9 @@ nnoremap ]c g,
 nnoremap <leader>ls :ls<CR>
 
 " Easy bindings for its various modes
-"nmap <leader>bb :CtrlPBuffer<cr>
-"nmap <leader>bm :CtrlPMixed<cr>
-"nmap <leader>bs :CtrlPMRU<cr>
+"nmap <c-p> :CtrlPMRU<cr>
+"nmap <c-P> :CtrlPBuffer<cr>
+"nmap <leader>p :CtrlPMRU<cr>
 
 "map /  <Plug>(incsearch-forward)
 
@@ -325,3 +326,31 @@ let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>', '<a-k>'],
   \ 'ToggleType(-1)':       ['<c-b>', '<a-j>'],
   \ }
+
+" Use Q to intelligently close a window 
+" (if there are multiple windows into the same buffer)
+" or kill the buffer entirely if it's the last window looking into that buffer
+function! CloseWindowOrKillBuffer()
+  let number_of_windows_to_this_buffer = len(filter(range(1, winnr('$')), "winbufnr(v:val) == bufnr('%')"))
+
+  " We should never bdelete a nerd tree
+  if matchstr(expand("%"), 'NERD') == 'NERD'
+    wincmd c
+    return
+  endif
+
+  if number_of_windows_to_this_buffer > 1
+    wincmd c
+  else
+    bdelete
+  endif
+endfunction
+
+nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
+
+inoremap kj <esc>
+inoremap <esc> <nop>
+
+" delete variable iv as text object
+" wont work as vav
+"onoremap iv :<c-u>execute "normal! ?var\r:nohlsearch\rv/;\rl"<CR>

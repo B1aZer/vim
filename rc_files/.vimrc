@@ -1,4 +1,5 @@
 execute pathogen#infect()
+Helptags
 
 " mappings
 if filereadable(expand("~/.vim/rc_files/mappings.vim"))
@@ -241,6 +242,7 @@ let g:ctrlp_working_path_mode = 'r'
 
 " set dafault mode for ctrlP
 let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_map = '<c-p>'
 
 " not sure if works properly
 let g:ctrlp_custom_ignore = {

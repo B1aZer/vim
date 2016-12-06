@@ -36,6 +36,8 @@
    on any text object
  - aa - around attr object (for html)
  - v_o - o in visual mode goes to the other side of selection
+ - Last edited text saved in . register, you also can jump to with \`.
+ - d_v_d - deletes from cursor to begging of the screen. But how ?
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
@@ -55,6 +57,7 @@
  *]e* *v_]e*
  ]e                      Exchange the current line with [count] lines below it.
  ```
+
 # Don't Use Tabs, Only Buffers #
 
 http://vim.wikia.com/wiki/Vim_buffer_FAQ
@@ -89,6 +92,10 @@ The most quick way to select object is to use:
  ```
 
 # TODO #
+
+- text obj: js: from start of the line to ;
+- move to next indent
+- <leader>D delete from the left of var to the indent
 
 - Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
 - Make standard paired bindings to all common commands, similar to unimpared
