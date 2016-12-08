@@ -188,7 +188,7 @@ inoremap <F11> <C-o>:syntax sync fromstart<CR>
 " nnoremap ` '
 
 "Yanks mappings
-nmap <leader>p ciw<C-R>0<Esc>b
+nnoremap <leader>p ciw<C-R>0<Esc>b
 "nnoremap <leader>p "_diwhp
 "nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
@@ -253,7 +253,7 @@ nnoremap ^ 0
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-imap <C-a> <esc>la
+inoremap <C-a> <esc>la
 
 "(v)im (r)eload
 nmap <silent> <leader>vr :so %<CR>
@@ -274,7 +274,7 @@ nnoremap ]c g,
 "nnoremap [p `[
 "nnoremap ]p `]
 
-nnoremap <leader>ls :ls<CR>
+"nnoremap <leader>ls :ls<CR>
 
 " Easy bindings for its various modes
 "nmap <c-p> :CtrlPMRU<cr>

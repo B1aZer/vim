@@ -38,6 +38,7 @@
  - v_o - o in visual mode goes to the other side of selection
  - Last edited text saved in . register, you also can jump to with \`.
  - d_v_d - deletes from cursor to begging of the screen. But how ?
+ - :vert sb N - open this buffer ib vert split
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
@@ -92,6 +93,8 @@ The most quick way to select object is to use:
  ```
 
 # TODO #
+
+- write jsdoc modifies, uses
 
 - text obj: js: from start of the line to ;
 - move to next indent

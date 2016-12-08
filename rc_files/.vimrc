@@ -232,6 +232,23 @@ call textobj#user#plugin('tags', {
 \   }
 \ })
 
+"call textobj#user#plugin('tags', {
+"\   'attribute': {
+"\     'select-a-function': 'CurrentLineA',
+"\     'select-a': 'aa',
+"\     'select-i-function': 'CurrentLineA',
+"\     'select-i': 'ia',
+"\   }
+"\ })
+
+"function! CurrentLineA()
+  "execute "normal! ?\"\rB"
+  "let head_pos = getpos('.')
+  "normal! E
+  "let tail_pos = getpos('.')
+  "return ['v', head_pos, tail_pos]
+"endfunction
+
 " save marks
 "set viminfoviminfo='100,f1
 
