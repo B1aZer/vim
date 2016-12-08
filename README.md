@@ -23,6 +23,7 @@
  - [\` ]\` next/prev mark
  - [z ]z next/prev open fold. Would work even on hidden folds
  - zj, zk nex/prev fold
+ - zh, zl - more/less folding
  - [c ]c next/prev change
  - c-space expose snippet
  - :JsDoc leader/js
@@ -38,7 +39,8 @@
  - v_o - o in visual mode goes to the other side of selection
  - Last edited text saved in . register, you also can jump to with \`.
  - d_v_d - deletes from cursor to begging of the screen. But how ?
- - :vert sb N - open this buffer ib vert split
+ - :vert sb N //// nope - <c-w>v(s) - open this buffer ib vert split
+ - :on - close splits beside this
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
@@ -99,6 +101,7 @@ The most quick way to select object is to use:
 - text obj: js: from start of the line to ;
 - move to next indent
 - <leader>D delete from the left of var to the indent
+- don't use <leader-jk>, use <c-w> and map them to movement
 
 - Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
 - Make standard paired bindings to all common commands, similar to unimpared

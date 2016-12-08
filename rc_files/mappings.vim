@@ -267,12 +267,14 @@ nnoremap [c g;
 nnoremap ]c g,
 
 " setting folding
-"noremap ]f zr
-"noremap [f zm
+noremap zl zr
+noremap zh zm
 
 " go to past locations, to be consistent with unimpared
 "nnoremap [p `[
 "nnoremap ]p `]
+nnoremap [p <Plug>yankstack_substitute_older_paste
+nnoremap ]P <Plug>yankstack_substitute_newer_paste
 
 "nnoremap <leader>ls :ls<CR>
 
