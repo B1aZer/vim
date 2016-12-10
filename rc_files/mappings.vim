@@ -14,12 +14,17 @@
 "0
 "s
 
+" ABBREVIATIONS "
+ab se side-eff:
+" END of ABBREVIATIONS "
+
 let mapleader = "\<Space>"
 
 command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
 " Expand region pligun bind o v
-vmap v <Plug>(expand_region_expand)
+"vmap v <Plug>(expand_region_expand)
+vnoremap v <Esc>
 "vmap <C-v> <Plug>(expand_region_shrink)
 
 " vp doesn't replace paste buffer
@@ -273,8 +278,10 @@ noremap zh zm
 " go to past locations, to be consistent with unimpared
 "nnoremap [p `[
 "nnoremap ]p `]
+
+call yankstack#setup()
 nnoremap [p <Plug>yankstack_substitute_older_paste
-nnoremap ]P <Plug>yankstack_substitute_newer_paste
+nnoremap ]p <Plug>yankstack_substitute_newer_paste
 
 "nnoremap <leader>ls :ls<CR>
 
@@ -356,3 +363,9 @@ inoremap <esc> <nop>
 " delete variable iv as text object
 " wont work as vav
 "onoremap iv :<c-u>execute "normal! ?var\r:nohlsearch\rv/;\rl"<CR>
+
+" Smooth scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
