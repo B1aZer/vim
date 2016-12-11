@@ -37,9 +37,6 @@
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = git@github.com:ntpeters/vim-better-whitespace.git
-[submodule "bundle/vim-buffergator"]
-	path = bundle/vim-buffergator
-	url = git@github.com:jeetsukumaran/vim-buffergator.git
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = git@github.com:Lokaltog/vim-easymotion.git
@@ -55,15 +52,6 @@
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = git@github.com:xolox/vim-misc.git
-[submodule "bundle/vim-session"]
-	path = bundle/vim-session
-	url = git@github.com:xolox/vim-session.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = git@github.com:garbas/vim-snipmate.git
-[submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
-	url = git@github.com:honza/vim-snippets.git
 [submodule "bundle/vim-unimpaired"]
 	path = bundle/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
@@ -82,3 +70,54 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "bundle/vim-jsdoc"]
+	path = bundle/vim-jsdoc
+	url = git@github.com:heavenshell/vim-jsdoc.git
+[submodule "bundle/vim-CamelCaseMotion"]
+	path = bundle/vim-CamelCaseMotion
+	url = git@github.com:bkad/CamelCaseMotion.git
+[submodule "bundle/vim-textobj-indent"]
+	path = bundle/vim-textobj-indent
+	url = git@github.com:kana/vim-textobj-indent.git
+[submodule "bundle/vim-textobj-user"]
+	path = bundle/vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "bundle/vim-textobj-line"]
+	path = bundle/vim-textobj-line
+	url = git@github.com:kana/vim-textobj-line.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "bundle/vim-signature"]
+	path = bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "/home/blaze/.vim/bundle/incsearch.vim"]
+	path = /home/blaze/.vim/bundle/incsearch.vim
+	url = https://github.com/haya14busa/incsearch.vim
+[submodule "/home/blaze/.vim/bundle/incsearch-easymotion.vim"]
+	path = /home/blaze/.vim/bundle/incsearch-easymotion.vim
+	url = https://github.com/haya14busa/incsearch-easymotion.vim
+[submodule "bundle/vim-repmo"]
+	path = bundle/vim-repmo
+	url = git@github.com:Houl/vim-repmo.git
+[submodule "/home/blaze/.vim/bundle/vim-javascript"]
+	path = /home/blaze/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "/home/blaze/.vim/bundle/vim-bufferline"]
+	path = /home/blaze/.vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-yankstack"]
+	path = bundle/vim-yankstack
+	url = git@github.com:maxbrunsfeld/vim-yankstack.git
+[submodule "bundle/vim-smooth-scroll"]
+	path = bundle/vim-smooth-scroll
+	url = git@github.com:terryma/vim-smooth-scroll.git

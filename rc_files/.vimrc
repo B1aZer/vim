@@ -1,4 +1,5 @@
 execute pathogen#infect()
+Helptags
 
 " mappings
 if filereadable(expand("~/.vim/rc_files/mappings.vim"))
@@ -56,7 +57,7 @@ set smartcase   " ... unless they contain at least one capital letter
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
+"set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 ""
@@ -94,6 +95,8 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+set wildignore+=*/tmp/*,*/undodir/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*\\undodir\\*,*.swp,*.zip,*.exe  " Windows
 
 ""
 "" Backup and swap files
@@ -171,18 +174,143 @@ hi ExtraWhitespace guibg=#990000 ctermbg=red
 " Powerline fonts
 let g:airline_powerline_fonts = 1
 
+" show tab name at the top
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+
 " Dont pair " in vim files
 let g:autoclose_vim_commentmode = 1
 
-" Always sow status
+" Always show status
 set laststatus=2
 
 " Dont repeat ever
-let g:hardtime_default_on = 1
-let g:hardtime_allow_different_key = 1
+" let g:hardtime_default_on = 1
+" let g:hardtime_allow_different_key = 1
 
 " Relative numbers
 set relativenumber
 
 "es6 support
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
+
+" python lint
+let g:syntastic_python_checkers = ['pylint']
+
+" Trigger configuration. Do not use <tab> if you use YouCompleteMe
+let g:UltiSnipsExpandTrigger="<c-space>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" webpack
+set backupcopy=yes
+
+" JSDOC
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_return_description = 0
+
+" open grep results in new tabs
+"set switchbuf+=usetab,newtab
+
+" camelCaseMotion
+" call camelcasemotion#CreateMotionMappings('<leader>')
+
+"bufferagator
+"let g:buffergator_display_regime = "bufname"
+
+"indent show <leader>ig
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+" Select tag attribute as text object
+" Same as vaW (almost except for >)
+call textobj#user#plugin('tags', {
+\   'attribute': {
+\     'pattern': '\S\+=".\{-}"',
+\     'select': ['aa', 'ia'],
+\   }
+\ })
+
+"call textobj#user#plugin('tags', {
+"\   'attribute': {
+"\     'select-a-function': 'CurrentLineA',
+"\     'select-a': 'aa',
+"\     'select-i-function': 'CurrentLineA',
+"\     'select-i': 'ia',
+"\   }
+"\ })
+
+"function! CurrentLineA()
+  "execute "normal! ?\"\rB"
+  "let head_pos = getpos('.')
+  "normal! E
+  "let tail_pos = getpos('.')
+  "return ['v', head_pos, tail_pos]
+"endfunction
+
+" save marks
+"set viminfoviminfo='100,f1
+
+" dont save buffers to sessions
+set sessionoptions-=buffers
+
+let g:ctrlp_working_path_mode = 'r'
+
+" set dafault mode for ctrlP
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_map = '<c-p>'
+
+" not sure if works properly
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|undodir)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|mov|psd)$',
+  \ }
+
+" speed up ctrlP
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+
+" this command needed to unload a buffer
+command -nargs=? -bang BW :silent! argd % | bw<bang><args>
+
+" enable jsdoc plugin
+let g:javascript_plugin_jsdoc = 1
+
+" set indeng guides width
+let g:indent_guides_guide_size = 1
+
+call expand_region#custom_text_objects({
+      \ "\/\\n\\n\<CR>": 1,
+      \ 'a]' :1,
+      \ 'ab' :1,
+      \ 'aB' :1,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
+
+let g:SignatureMap = {
+      \ 'Leader'             :  "m",
+      \ 'PlaceNextMark'      :  "m,",
+      \ 'ToggleMarkAtLine'   :  "m.",
+      \ 'PurgeMarksAtLine'   :  "m-",
+      \ 'DeleteMark'         :  "dm",
+      \ 'PurgeMarks'         :  "m<Space>",
+      \ 'PurgeMarkers'       :  "m<BS>",
+      \ 'GotoNextLineAlpha'  :  "",
+      \ 'GotoPrevLineAlpha'  :  "",
+      \ 'GotoNextSpotAlpha'  :  "",
+      \ 'GotoPrevSpotAlpha'  :  "",
+      \ 'GotoNextLineByPos'  :  "]'",
+      \ 'GotoPrevLineByPos'  :  "['",
+      \ 'GotoNextSpotByPos'  :  "]`",
+      \ 'GotoPrevSpotByPos'  :  "[`",
+      \ 'GotoNextMarker'     :  "]-",
+      \ 'GotoPrevMarker'     :  "[-",
+      \ 'GotoNextMarkerAny'  :  "]=",
+      \ 'GotoPrevMarkerAny'  :  "[=",
+      \ 'ListBufferMarks'    :  "m/",
+      \ 'ListBufferMarkers'  :  "m?"
+      \ }
