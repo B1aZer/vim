@@ -202,7 +202,7 @@ nnoremap <leader>p ciw<C-R>0<Esc>b
 " nmap gp "zviwp
 "nmap <leader>c ciw
 
-nmap <leader>c ciw
+"nmap <leader>c ciw
 
 " Spell check
 nnoremap <leader><F4> :setlocal spell!<cr>
