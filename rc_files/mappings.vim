@@ -282,9 +282,8 @@ noremap zh zm
 "nnoremap [p `[
 "nnoremap ]p `]
 
-call yankstack#setup()
-nnoremap [p <Plug>yankstack_substitute_older_paste
-nnoremap ]p <Plug>yankstack_substitute_newer_paste
+"nnoremap [p <Plug>yankstack_substitute_older_paste
+"nnoremap ]p <Plug>yankstack_substitute_newer_paste
 
 "nnoremap <leader>ls :ls<CR>
 
