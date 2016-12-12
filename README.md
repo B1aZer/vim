@@ -96,6 +96,7 @@ The most quick way to select object is to use:
 
 # TODO #
 
+- yankstack is not workings
 - write jsdoc modifies, uses
 
 - text obj: js: from start of the line to ;

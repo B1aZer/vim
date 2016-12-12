@@ -15,7 +15,8 @@
 "s
 
 " ABBREVIATIONS "
-ab se side-eff:
+"ab se side-eff:
+ab req @requires
 " END of ABBREVIATIONS "
 
 let mapleader = "\<Space>"

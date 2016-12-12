@@ -115,9 +115,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-yankstack"]
-	path = bundle/vim-yankstack
-	url = git@github.com:maxbrunsfeld/vim-yankstack.git
 [submodule "bundle/vim-smooth-scroll"]
 	path = bundle/vim-smooth-scroll
 	url = git@github.com:terryma/vim-smooth-scroll.git
