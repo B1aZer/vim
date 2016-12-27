@@ -174,7 +174,8 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
-nnoremap <leader>gr :Ggr 
+"nnoremap <leader>gr :Ggr 
+nnoremap <leader>gr "zyiw:Ggr <C-r>z
 "nnoremap <silent> <leader>gb :Gblame<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
