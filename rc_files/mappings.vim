@@ -27,6 +27,7 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 "vmap v <Plug>(expand_region_expand)
 vnoremap v <Esc>
 "vmap <C-v> <Plug>(expand_region_shrink)
+"noremap V v$
 
 " vp doesn't replace paste buffer
 function! RestoreRegister()
@@ -195,7 +196,8 @@ inoremap <F11> <C-o>:syntax sync fromstart<CR>
 " nnoremap ` '
 
 "Yanks mappings
-nnoremap <leader>p ciw<C-R>0<Esc>b
+nnoremap <leader>y "kyiw
+nnoremap <leader>p ciw<C-R>k<Esc>b
 "nnoremap <leader>p "_diwhp
 "nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
