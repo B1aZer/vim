@@ -13,7 +13,7 @@
 
 # update submodules #
 1. git pull --recurse-submodules
-2. git submodule update --recursive
+2. git submodule update --init --recursive
 (2.5). git submodule foreach --recursive git checkout master
 (3). in YouCompleteMe dir git submodule update --init --recursive
 
