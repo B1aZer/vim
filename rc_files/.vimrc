@@ -197,6 +197,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 " python lint
 let g:syntastic_python_checkers = ['pylint']
 
+" show all messages
+let g:syntastic_aggregate_errors = 1
+
 " Trigger configuration. Do not use <tab> if you use YouCompleteMe
 let g:UltiSnipsExpandTrigger="<c-space>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
