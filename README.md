@@ -34,10 +34,10 @@
  - ]] good for indents
  - Use Fn snippets. https://github.com/honza/vim-snippets/tree/master/UltiSnips
  - Use surroundings: https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
-   ys - you sourround, ysiw
-   cs - change surround
-   ds - delete surront
-   on any text object
+   - ys - you sourround, ysiw
+   - cs - change surround
+   - ds - delete surront
+   - on any text object
  - aa - around attr object (for html)
  - v_o - o in visual mode goes to the other side of selection
  - Last edited text saved in . register, you also can jump to with \`.
