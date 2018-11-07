@@ -5,6 +5,7 @@
 2. git add .
 3. git commit -m "Install Fugitive.vim bundle as a submodule."
 [from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
+4. install YCM; cd bundle/tern_for_vim -> npm install
 
 # on oher machine
 (you may need to go in bundles directory)
