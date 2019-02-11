@@ -44,6 +44,7 @@
  - d_v_d - deletes from cursor to begging of the screen. But how ?
  - :vert sb N //// nope - <c-w>v(s) - open this buffer ib vert split
  - :on - close splits beside this
+ - :w!! - sudo save
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>
