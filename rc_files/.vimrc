@@ -195,7 +195,7 @@ set relativenumber
 let g:syntastic_javascript_checkers = ['eslint']
 
 " python lint
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['pep8']
 
 " show all messages
 let g:syntastic_aggregate_errors = 1
@@ -317,3 +317,6 @@ let g:SignatureMap = {
       \ 'ListBufferMarks'    :  "m/",
       \ 'ListBufferMarkers'  :  "m?"
       \ }
+
+" no sound
+set belloff=all

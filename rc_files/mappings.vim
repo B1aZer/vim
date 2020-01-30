@@ -177,6 +177,7 @@ nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
 "nnoremap <leader>gr :Ggr 
 nnoremap <leader>gr "zyiw:Ggr <C-r>z
+nnoremap <leader>gf :Ggr <C-r>%
 "nnoremap <silent> <leader>gb :Gblame<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
