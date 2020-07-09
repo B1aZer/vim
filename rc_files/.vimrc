@@ -163,9 +163,6 @@ let g:netrw_mousemaps = 0
 " Default to tree mode
 " let g:netrw_liststyle=3
 
-" Change directory to the current buffer when opening files.
-" set autochdir
-
 " Extra white space color
 hi ExtraWhitespace guibg=#990000 ctermbg=red
 
@@ -175,8 +172,8 @@ hi ExtraWhitespace guibg=#990000 ctermbg=red
 let g:airline_powerline_fonts = 1
 
 " show tab name at the top
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 
 " Dont pair " in vim files
 let g:autoclose_vim_commentmode = 1
@@ -320,3 +317,27 @@ let g:SignatureMap = {
 
 " no sound
 set belloff=all
+
+" Allow markdown
+let g:ycm_filetype_blacklist = {}
+
+" Minimal
+colorscheme paramount-indie
+"colorscheme slate-imp
+"colorscheme default
+
+" Markdown folding
+set conceallevel=2
+
+" YAML formatting
+let g:vim_markdown_frontmatter = 1
+
+" Spell check for markdown
+autocmd FileType markdown setlocal spell
+
+" Open db on startup
+autocmd VimEnter * if !argc() | edit ~/Dropbox/Knowledge\ db/Zettlr/README.md | endif
+"
+" Change directory to the current buffer when opening files.
+set autochdir
+

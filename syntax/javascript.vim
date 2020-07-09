@@ -197,8 +197,9 @@ endif
 exe 'syntax match jsFunction /\<function\>/ nextgroup=jsFuncName,jsFuncArgs skipwhite '.(exists('g:javascript_conceal_function') ? 'conceal cchar='.g:javascript_conceal_function : '')
 
 syntax match   jsFuncName       contained /\<[a-zA-Z_$][0-9a-zA-Z_$]*/ nextgroup=jsFuncArgs skipwhite
-syntax region  jsFuncArgs       contained matchgroup=jsFuncParens start='(' end=')' contains=jsFuncArgCommas,jsFuncArgRest nextgroup=jsFuncBlock keepend skipwhite skipempty
+syntax region  jsFuncArgs       contained matchgroup=jsFuncParens start='(' end=')' contains=jsFuncArgCommas,jsDefParm,jsFuncArgRest nextgroup=jsFuncBlock keepend skipwhite skipempty
 syntax match   jsFuncArgCommas  contained ','
+syntax match   jsDefParm        contained /=[^=]\s*\([0-9a-zA-Z_$\'\"]*\)/
 syntax match   jsFuncArgRest    contained /\%(\.\.\.[a-zA-Z_$][0-9a-zA-Z_$]*\))/
 syntax keyword jsArgsObj        arguments contained containedin=jsFuncBlock
 
@@ -214,6 +215,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   else
     command -nargs=+ HiLink hi def link <args>
   endif
+  HiLink jsDefParm              Special
   HiLink jsFuncArgRest          Special
   HiLink jsComment              Comment
   HiLink jsLineComment          Comment

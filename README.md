@@ -18,6 +18,12 @@
 (2.5). git submodule foreach --recursive git checkout master
 (3). in YouCompleteMe dir git submodule update --init --recursive
 
+# apply custom patches
+cp ./custom_patches/ftplugin/markdown.vim to ./bundles/vim-markdown/ftplugin/markdown.vim
+
+#font
+monaco
+
 
 # USEFUL: #
 
@@ -29,10 +35,10 @@
  - zj, zk nex/prev fold
  - zh, zl - more/less folding
  - [c ]c next/prev change
- - c-space expose snippet
  - :JsDoc leader/js
  - git: leader gd gr gs
  - ]] good for indents
+ - c-space expose snippet
  - Use Fn snippets. https://github.com/honza/vim-snippets/tree/master/UltiSnips
  - Use surroundings: https://github.com/tpope/vim-surround/blob/master/doc/surround.txt
    - ys - you sourround, ysiw
@@ -46,6 +52,10 @@
  - :vert sb N //// nope - <c-w>v(s) - open this buffer ib vert split
  - :on - close splits beside this
  - :w!! - sudo save
+ - Ctrl-O - in insert mode, execute one command and return to insert mode
+ - :%s//bar/g - replace all ocurrences of last searched pattern
+ - ge in Markdown open local link
+ - C+^ to prev buffer
 
  ```
  nmap <Leader>a= :Tabularize /=<CR>

@@ -175,6 +175,7 @@ cmap w!! w !sudo tee % >/dev/null
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
+nnoremap <silent> <leader>gg :Gpush<CR>
 "nnoremap <leader>gr :Ggr 
 nnoremap <leader>gr "zyiw:Ggr <C-r>z
 nnoremap <leader>gf :Ggr <C-r>%
@@ -375,3 +376,11 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+" open vertivcal netrw
+nnoremap <silent> <leader>ve :Vex<cr>
+
+" synstax highlight debug
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
