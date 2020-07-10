@@ -1,3 +1,7 @@
+" Copy to vim-markdown
+" FIXME: 605
+"
+"
 "TODO print messages when on visual mode. I only see VISUAL, not the messages.
 
 " Function interface phylosophy:
@@ -598,6 +602,7 @@ endif
 
 function! s:VersionAwareNetrwBrowseX(url)
     if has('patch-7.4.567')
+        " FIXME
         call netrw#NetrwBrowseX(a:url, 0)
     else
         call netrw#NetrwBrowseX(a:url, 0)

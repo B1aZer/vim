@@ -117,7 +117,7 @@ set pastetoggle=<F12>
 "" File types
 ""
 
-filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
+filetype plugin indent on " Turn on filetype indent
 
 if has("autocmd")
   " In Makefiles, use real tabs, not tabs expanded to spaces
@@ -282,14 +282,14 @@ let g:javascript_plugin_jsdoc = 1
 " set indeng guides width
 let g:indent_guides_guide_size = 1
 
-call expand_region#custom_text_objects({
-      \ "\/\\n\\n\<CR>": 1,
-      \ 'a]' :1,
-      \ 'ab' :1,
-      \ 'aB' :1,
-      \ 'ii' :0,
-      \ 'ai' :0,
-      \ })
+" call expand_region#custom_text_objects({
+"       \ "\/\\n\\n\<CR>": 1,
+"       \ 'a]' :1,
+"       \ 'ab' :1,
+"       \ 'aB' :1,
+"       \ 'ii' :0,
+"       \ 'ai' :0,
+"       \ })
 
 let g:SignatureMap = {
       \ 'Leader'             :  "m",
@@ -326,8 +326,7 @@ colorscheme paramount-indie
 "colorscheme slate-imp
 "colorscheme default
 
-" Markdown folding
-set conceallevel=2
+" vim markdown
 
 " YAML formatting
 let g:vim_markdown_frontmatter = 1
@@ -336,8 +335,90 @@ let g:vim_markdown_frontmatter = 1
 autocmd FileType markdown setlocal spell
 
 " Open db on startup
-autocmd VimEnter * if !argc() | edit ~/Dropbox/Knowledge\ db/Zettlr/README.md | endif
+" autocmd VimEnter * if !argc() | edit ~/Dropbox/Knowledge\ db/Zettlr/README.md | endif
 "
 " Change directory to the current buffer when opening files.
-set autochdir
+" set autochdir
 
+" shrink toc if possible
+let g:vim_markdown_toc_autofit = 1
+
+" fancy syntax concealment
+autocmd FileType markdown set conceallevel=2
+
+" but not for code blocks
+let g:vim_markdown_conceal_code_blocks = 0
+
+" adding fzf
+set rtp+=~/.fzf
+
+" fzf Ggrep with preview
+"command! -bang -nargs=* GGrep
+" \ call fzf#vim#grep(
+" \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+" \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+" Do not auto close brackets in Markdown
+au FileType markdown let b:delimitMate_autoclose = 0
+
+function! s:build_quickfix_list(lines)
+  let s:filenames = map(copy(a:lines), '{ "filename": v:val }')
+  for s:filename in s:filenames
+    let s:lines = readfile(s:filename.filename)
+    try
+      execute "normal!i[[" . split(s:lines[1],': ')[1] ."]] [". split(s:lines[2],': ')[1] ."](" . s:filename.filename . ")\<Esc>"
+    catch /.*/
+      echo "Caught error: " . v:exception
+    endtry
+    try
+      execute "normal!A {due: " . split(s:lines[3],': ')[1] ."}\<Esc>0"
+    catch /.*/
+      echo "Caught error: " . v:exception
+    endtry
+  endfor
+endfunction
+
+" Link file from fzf
+let g:fzf_action = {
+  \ 'ctrl-l': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Set defulat working dir
+cd ~/Dropbox/Knowledge db/Zettlr
+
+" Create note in the same folder as buffer opened
+func! s:note_add(...)
+
+  " build the file name
+  let l:sep = ''
+  if len(a:000) > 0
+    let l:sep = '-'
+  endif
+  let l:fname = expand('%:h'). '/' . strftime("%F-%H%M") . l:sep . join(a:000, '-') . '.md'
+
+  " edit the new file
+  exec "e " . l:fname
+
+  " enter the title and timestamp (using ultisnips) in the new file
+  if len(a:000) > 0
+    exec "normal ggO--\<c-space>\<c-l>\<esc>\j\$\a " . join(a:000) . "\<esc>L"
+  else
+    exec "normal ggO--\<c-space>\<c-l>\<esc>\j\A\ "
+  endif
+endfunc
+
+" Create note
+command! -nargs=* Note call s:note_add(<f-args>)
+
+" spell lange check
+set spelllang=en_us,ru_ru
+
+" Enable guides by default
+let g:indent_guides_enable_on_vim_startup = 1
+
+" neovim guard
+if !has('nvim')
+  set ttymouse=xterm2
+endif

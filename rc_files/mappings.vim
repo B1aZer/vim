@@ -136,22 +136,22 @@ map j gj
 map k gk
 
 " Moving between windows
-map <leader>h <C-W>h
-map <leader>j <C-W>j
-map <leader>k <C-W>k
-map <leader>l <C-W>l
-map <leader>H <c-w>H
-map <leader>J <c-w>J
-map <leader>K <c-w>K
-map <leader>L <c-w>L
+"map <leader>h <C-W>h
+"map <leader>j <C-W>j
+"map <leader>k <C-W>k
+"map <leader>l <C-W>l
+"map <leader>H <c-w>H
+"map <leader>J <c-w>J
+"map <leader>K <c-w>K
+"map <leader>L <c-w>L
 
-map <leader>r <c-w>r
-map <leader>R <c-w>R
+"map <leader>r <c-w>r
+"map <leader>R <c-w>R
 
-map <leader>2h <C-W>2h
-map <leader>2j <C-W>2j
-map <leader>2k <C-W>2k
-map <leader>2l <C-W>2l
+"map <leader>2h <C-W>2h
+"map <leader>2j <C-W>2j
+"map <leader>2k <C-W>2k
+"map <leader>2l <C-W>2l
 
 " Close window
 "map <leader>q <c-w>q
@@ -160,6 +160,8 @@ map <silent> <leader>qq :q!<CR>
 
 " Easy movings
 map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
 map <Leader><Leader>h <Plug>(easymotion-linebackward)
 map <leader><leader>/ <Plug>(incsearch-easymotion-/)
 map <leader><leader>? <Plug>(incsearch-easymotion-?)
@@ -177,8 +179,8 @@ nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
 nnoremap <silent> <leader>gg :Gpush<CR>
 "nnoremap <leader>gr :Ggr 
-nnoremap <leader>gr "zyiw:Ggr <C-r>z
-nnoremap <leader>gf :Ggr <C-r>%
+nnoremap gr "zyiw:Ggr <C-r>z
+nnoremap gf :Ggr <C-r>%
 "nnoremap <silent> <leader>gb :Gblame<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
@@ -302,22 +304,22 @@ noremap zh zm
 " RepMo
 
 " map a motion and its reverse motion:
-noremap <expr> h repmo#Key('h', 'l')|sunmap h
-noremap <expr> l repmo#Key('l', 'h')|sunmap l
+" noremap <expr> h repmo#Key('h', 'l')|sunmap h
+" noremap <expr> l repmo#Key('l', 'h')|sunmap l
 
 " if you like `:noremap j gj', you can keep that:
-noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
-noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
+" noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
+" noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
 
 " repeat the last [count]motion or the last zap-key:
-noremap <expr> ; repmo#LastKey(';')|sunmap ;
-noremap <expr> , repmo#LastRevKey(',')|sunmap ,
+" noremap <expr> ; repmo#LastKey(';')|sunmap ;
+" noremap <expr> , repmo#LastRevKey(',')|sunmap ,
 
 " add these mappings when repeating with `;' or `,':
-noremap <expr> f repmo#ZapKey('f')|sunmap f
-noremap <expr> F repmo#ZapKey('F')|sunmap F
-noremap <expr> t repmo#ZapKey('t')|sunmap t
-noremap <expr> T repmo#ZapKey('T')|sunmap T
+" noremap <expr> f repmo#ZapKey('f')|sunmap f
+" noremap <expr> F repmo#ZapKey('F')|sunmap F
+" noremap <expr> t repmo#ZapKey('t')|sunmap t
+" noremap <expr> T repmo#ZapKey('T')|sunmap T
 
 " End of RepMo
 
@@ -365,17 +367,17 @@ endfunction
 nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
 
 inoremap kj <esc>
-inoremap <esc> <nop>
+"inoremap <esc> <nop>
 
 " delete variable iv as text object
 " wont work as vav
 "onoremap iv :<c-u>execute "normal! ?var\r:nohlsearch\rv/;\rl"<CR>
 
 " Smooth scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+"noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+"noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+"noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+"noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " open vertivcal netrw
 nnoremap <silent> <leader>ve :Vex<cr>
@@ -384,3 +386,31 @@ nnoremap <silent> <leader>ve :Vex<cr>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" vim markdown
+
+" open Toc
+autocmd Filetype markdown nnoremap <silent> <leader>j :Toc<cr>
+
+" select from TOC and quit
+autocmd FileType qf nnoremap <Space> <cr>:only<cr>
+
+" toggle checkbox in markdown
+augroup MappyTime
+  autocmd!
+  autocmd FileType markdown nnoremap <buffer> <silent> <leader>t :call winrestview(<SID>toggle('^\s*-\s*\[\zs.\ze\]', {' ': '.', '.': 'x', 'x': ' '}))<cr>
+augroup END
+
+function s:toggle(pattern, dict, ...)
+  let view = winsaveview()
+  execute 'keeppatterns s/' . a:pattern . '/\=get(a:dict, submatch(0), a:0 ? a:1 : " ")/e'
+  return view
+endfunction
+
+" Buffers as in unimpaired
+nnoremap ]b           : bprevious<CR>
+nnoremap [b           : bnext<CR>
+
+" Open fzf
+nnoremap <leader><c-p> :Files<cr>
+inoremap <esc><leader><c-p> :Files<cr>
