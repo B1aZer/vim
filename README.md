@@ -6,8 +6,8 @@
 2. git add .
 3. git commit -m "Install Fugitive.vim bundle as a submodule."
 [from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
-4.5) Consider [deoplete](https://github.com/Shougo/deoplete.nvim) instead of YCM
-4. install YCM; cd bundle/tern_for_vim -> npm install
+4. Install [deoplete](https://github.com/Shougo/deoplete.nvim)
+~~4. install YCM; cd bundle/tern_for_vim -> npm install~~
 
 ### On other machine
 

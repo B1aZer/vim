@@ -133,3 +133,9 @@
 [submodule "bundle/vim-hug-neovim-rpc"]
 	path = bundle/vim-hug-neovim-rpc
 	url = git@github.com:roxma/vim-hug-neovim-rpc.git
+[submodule "deoplete.nvim"]
+	path = deoplete.nvim
+	url = git@github.com:Shougo/deoplete.nvim.git
+[submodule "bundle/deoplete.nvim"]
+	path = bundle/deoplete.nvim
+	url = git@github.com:Shougo/deoplete.nvim.git

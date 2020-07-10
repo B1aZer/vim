@@ -418,7 +418,5 @@ set spelllang=en_us,ru_ru
 " Enable guides by default
 let g:indent_guides_enable_on_vim_startup = 1
 
-" neovim guard
-if !has('nvim')
-  set ttymouse=xterm2
-endif
+" deoplete startup
+let g:deoplete#enable_at_startup = 1
