@@ -43,15 +43,15 @@
 [submodule "pack/bundle/start/vim-indent-guides"]
 	path = pack/bundle/start/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
-[submodule "pack/bundle/start/incsearch.vim"]
-	path = pack/bundle/start/incsearch.vim
-	url = https://github.com/haya14busa/incsearch.vim
 [submodule "pack/bundle/start/vim-javascript"]
 	path = pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "pack/bundle/start/vim-surround"]
 	path = pack/bundle/start/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+;[submodule "pack/bundle/start/incsearch.vim"]
+	;path = pack/bundle/start/incsearch.vim
+	;url = https://github.com/haya14busa/incsearch.vim
 ;[submodule "pack/bundle/start/supertab"]
   ;path = pack/bundle/start/supertab
   ;url = git@github.com:ervandew/supertab.git

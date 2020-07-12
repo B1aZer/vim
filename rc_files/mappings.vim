@@ -159,13 +159,13 @@ map k gk
 map <silent> <leader>qq :q!<CR>
 
 " Easy movings
-map <Leader><Leader>l <Plug>(easymotion-lineforward)
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
-map <Leader><Leader>h <Plug>(easymotion-linebackward)
-map <leader><leader>/ <Plug>(incsearch-easymotion-/)
-map <leader><leader>? <Plug>(incsearch-easymotion-?)
-map <leader><leader>; <Plug>(easymotion-repeat)
+"map <Leader><Leader>l <Plug>(easymotion-lineforward)
+"map <Leader><Leader>j <Plug>(easymotion-j)
+"map <Leader><Leader>k <Plug>(easymotion-k)
+"map <Leader><Leader>h <Plug>(easymotion-linebackward)
+"map <leader><leader>/ <Plug>(incsearch-easymotion-/)
+"map <leader><leader>? <Plug>(incsearch-easymotion-?)
+"map <leader><leader>; <Plug>(easymotion-repeat)
 
 " Past from yank buffer
 imap <C-R><C-R> <C-R>"
@@ -179,8 +179,8 @@ nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
 nnoremap <silent> <leader>gg :Gpush<CR>
 "nnoremap <leader>gr :Ggr 
-nnoremap gr "zyiw:Ggr <C-r>z
-nnoremap gf :Ggr <C-r>%
+"nnoremap gr "zyiw:Ggr <C-r>z
+"nnoremap gf :Ggr <C-r>%
 "nnoremap <silent> <leader>gb :Gblame<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
@@ -234,7 +234,7 @@ nnoremap <leader><F4> :setlocal spell!<cr>
 "nnoremap <leader>fo zR
 
 "dont yank
-vnoremap <leader>d "_d
+"vnoremap <leader>d "_d
 
 "Registers cycle
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>

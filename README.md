@@ -168,21 +168,18 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 ### TODO
 
-  - move to easyclip
-  - write jsdoc modifies, uses
-
-  - text obj: js: from start of the line to ;
-  - move to next indent
-  - <leader>D delete from the left of var to the indent
+  - [x] move to easyclip, use + and other registers instead
+  - [x] write jsdoc modifies, uses
+  - [.] text obj: js: from start of the line to ;
+  - [ ] move to next indent
+  - [.] <leader>D delete from the left of var to the indent
   - [x] don't use <leader-jk>, use <c-w> and map them to movement
-
-  - Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
-  - Make standard paired bindings to all common commands, similar to unimpared
-  - ~~spell is not working <leader>F4~~ (problem with keyboard swap-fx)
-  - CtrlP is slow and not really useful
-  - ~~Somehow the smae buffer is always opens~~ (Able to resolve with new :BW command)
-  - New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
-  - Check for useful mappings: https://github.com/skwp/dotfiles
-  - Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
-
-  - http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim#answer-1220118
+  - [.] Make use of folds. More useful folding. Learn bindings. Use marks. Use as text objects. https://www.linux.com/learn/vim-tips-folding-fun
+  - [x] Make standard paired bindings to all common commands, similar to unimpared
+  - [x] ~~spell is not working <leader>F4~~ (problem with keyboard swap-fx)
+  - [x] CtrlP is slow and not really useful, fzf ftw
+  - [x] ~~Somehow the smae buffer is always opens~~ (Able to resolve with new :BW command)
+  - [ ] New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
+  - [ ] Check for useful mappings: https://github.com/skwp/dotfiles
+  - [.] Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
+  - [ ] http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim#answer-1220118
