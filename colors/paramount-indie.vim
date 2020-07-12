@@ -41,6 +41,7 @@ let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
 let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
+let s:darker_green    = { "gui": "#00d700", "cterm": "40"  }
 let s:dark_purple     = { "gui": "#af5fd7", "cterm": "134" }
 let s:light_purple    = { "gui": "#a790d5", "cterm": "140" }
 let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
@@ -143,8 +144,8 @@ call s:h("SpecialKey",    {"fg": s:light_green})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_blue})
 call s:h("ErrorMsg",      {"fg": s:red})
-call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:light_green, "fg": s:light_black})
+call s:h("IncSearch",     {"bg": s:lightest_gray, "fg": s:darker_green})
+call s:h("Search",        {"bg": s:lightest_gray, "fg": s:light_green})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})

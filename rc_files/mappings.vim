@@ -159,13 +159,23 @@ map k gk
 map <silent> <leader>qq :q!<CR>
 
 " Easy movings
-"map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
 "map <Leader><Leader>j <Plug>(easymotion-j)
 "map <Leader><Leader>k <Plug>(easymotion-k)
-"map <Leader><Leader>h <Plug>(easymotion-linebackward)
 "map <leader><leader>/ <Plug>(incsearch-easymotion-/)
 "map <leader><leader>? <Plug>(incsearch-easymotion-?)
 "map <leader><leader>; <Plug>(easymotion-repeat)
+
+" easy motion 2 char search
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)
+" easy motion s search
+nmap <leader>s <Plug>(easymotion-sn)
+xmap <leader>s <Plug>(easymotion-sn)
+omap <leader>z <Plug>(easymotion-sn)
 
 " Past from yank buffer
 imap <C-R><C-R> <C-R>"

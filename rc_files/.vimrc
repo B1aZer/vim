@@ -168,6 +168,9 @@ hi ExtraWhitespace guibg=#990000 ctermbg=red
 
 " let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
+" smat case for ee
+let g:EasyMotion_smartcase = 1
+
 " Powerline fonts
 let g:airline_powerline_fonts = 1
 
@@ -428,9 +431,6 @@ function! s:PluginFunctions()
   "<TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-  " searchr interface ~/.searchr
-  " https://vimways.org/2019/personal-notetaking-in-vim/
-  command! -nargs=* Searchr call searchr#search(<f-args>)
 endfunction
 
 autocmd VimEnter * call s:PluginFunctions()
