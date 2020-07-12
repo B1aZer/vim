@@ -15,7 +15,7 @@
 	url = git@github.com:ntpeters/vim-better-whitespace.git
 [submodule "pack/bundle/start/vim-easymotion"]
 	path = pack/bundle/start/vim-easymotion
-	url = git@github.com:Lokaltog/vim-easymotion.git
+	url = git@github.com:easymotion/vim-easymotion.git
 [submodule "pack/bundle/start/vim-fugitive"]
 	path = pack/bundle/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
