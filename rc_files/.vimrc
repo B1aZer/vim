@@ -1,5 +1,5 @@
-execute pathogen#infect()
-Helptags
+"execute pathogen#infect()
+"Helptags
 
 " mappings
 if filereadable(expand("~/.vim/rc_files/mappings.vim"))
@@ -198,7 +198,8 @@ let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_aggregate_errors = 1
 
 " Trigger configuration. Do not use <tab> if you use YouCompleteMe
-let g:UltiSnipsExpandTrigger="<c-space>"
+"let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-@>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
@@ -222,15 +223,6 @@ let g:jsdoc_return_description = 0
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-
-" Select tag attribute as text object
-" Same as vaW (almost except for >)
-call textobj#user#plugin('tags', {
-\   'attribute': {
-\     'pattern': '\S\+=".\{-}"',
-\     'select': ['aa', 'ia'],
-\   }
-\ })
 
 "call textobj#user#plugin('tags', {
 "\   'attribute': {
@@ -420,3 +412,25 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " deoplete startup
 let g:deoplete#enable_at_startup = 1
+
+function! s:PluginFunctions()
+
+  " Select tag attribute as text object
+  " Same as vaW (almost except for >)
+  call textobj#user#plugin('tags', {
+  \   'attribute': {
+  \     'pattern': '\S\+=".\{-}"',
+  \     'select': ['aa', 'ia'],
+  \   }
+  \ })
+
+  "call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
+  "<TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " searchr interface ~/.searchr
+  " https://vimways.org/2019/personal-notetaking-in-vim/
+  command! -nargs=* Searchr call searchr#search(<f-args>)
+endfunction
+
+autocmd VimEnter * call s:PluginFunctions()

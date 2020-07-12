@@ -68,13 +68,13 @@ nmap <leader><F3> :set hlsearch! hlsearch?<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 " buffer navigation like firefox
-nnoremap <A-j>           : bprevious<CR>
-nnoremap <A-k>           : bnext<CR>
-nnoremap <C-t>           : enew<CR>
+"nnoremap <A-j>           : bprevious<CR>
+"nnoremap <A-k>           : bnext<CR>
+"nnoremap <C-t>           : enew<CR>
 
-inoremap <A-j>   <Esc>  : bprevious<CR>i
-inoremap <A-k>   <Esc>  : bnext<CR>i
-inoremap <C-t>   <Esc>  : enew<CR>
+"inoremap <A-j>   <Esc>  : bprevious<CR>i
+"inoremap <A-k>   <Esc>  : bnext<CR>i
+"inoremap <C-t>   <Esc>  : enew<CR>
 
 if has('mac')
 
@@ -200,8 +200,8 @@ inoremap <F11> <C-o>:syntax sync fromstart<CR>
 " nnoremap ` '
 
 "Yanks mappings
-nnoremap <leader>y "kyiw
-nnoremap <leader>p ciw<C-R>k<Esc>b
+"nnoremap <leader>y "kyiw
+"nnoremap <leader>p ciw<C-R>k<Esc>b
 "nnoremap <leader>p "_diwhp
 "nmap <leader>P <Plug>yankstack_substitute_older_paste
 "nmap <leader>P "0P
@@ -414,3 +414,8 @@ nnoremap [b           : bnext<CR>
 " Open fzf
 nnoremap <leader><c-p> :Files<cr>
 inoremap <esc><leader><c-p> :Files<cr>
+nnoremap <c-p> :History<cr>
+
+" Safe paste from system clipboard.
+" See https://vim.fandom.com/wiki/Pasting_registers
+inoremap <C-R>+ <C-R><C-R>+

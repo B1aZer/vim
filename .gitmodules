@@ -1,141 +1,138 @@
-[submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+;[submodule "pack/bundle/start/ctrlp.vim"]
+	;path = pack/bundle/start/ctrlp.vim
+	;url = https://github.com/kien/ctrlp.vim.git
+[submodule "pack/bundle/start/nerdcommenter"]
+	path = pack/bundle/start/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
-[submodule "bundle/supertab"]
-  path = bundle/supertab
-  url = git@github.com:ervandew/supertab.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
+[submodule "pack/bundle/start/syntastic"]
+	path = pack/bundle/start/syntastic
 	url = git@github.com:scrooloose/syntastic.git
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
+[submodule "pack/bundle/start/vim-airline"]
+	path = pack/bundle/start/vim-airline
 	url = git@github.com:bling/vim-airline.git
-[submodule "bundle/vim-better-whitespace"]
-	path = bundle/vim-better-whitespace
+[submodule "pack/bundle/start/vim-better-whitespace"]
+	path = pack/bundle/start/vim-better-whitespace
 	url = git@github.com:ntpeters/vim-better-whitespace.git
-[submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
+[submodule "pack/bundle/start/vim-easymotion"]
+	path = pack/bundle/start/vim-easymotion
 	url = git@github.com:Lokaltog/vim-easymotion.git
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
+[submodule "pack/bundle/start/vim-fugitive"]
+	path = pack/bundle/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
+[submodule "pack/bundle/start/vim-markdown"]
+	path = pack/bundle/start/vim-markdown
 	url = git@github.com:plasticboy/vim-markdown.git
-[submodule "bundle/vim-jsx"]
-	path = bundle/vim-jsx
+[submodule "pack/bundle/start/vim-jsx"]
+	path = pack/bundle/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx
-;[submodule "bundle/YouCompleteMe"]
-	;path = bundle/YouCompleteMe
-	;url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
+[submodule "pack/bundle/start/ultisnips"]
+	path = pack/bundle/start/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
-[submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
+[submodule "pack/bundle/start/vim-snippets"]
+	path = pack/bundle/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule "bundle/vim-jsdoc"]
-	path = bundle/vim-jsdoc
+[submodule "pack/bundle/start/vim-jsdoc"]
+	path = pack/bundle/start/vim-jsdoc
 	url = git@github.com:heavenshell/vim-jsdoc.git
-[submodule "bundle/vim-CamelCaseMotion"]
-	path = bundle/vim-CamelCaseMotion
+[submodule "pack/bundle/start/vim-CamelCaseMotion"]
+	path = pack/bundle/start/vim-CamelCaseMotion
 	url = git@github.com:bkad/CamelCaseMotion.git
-[submodule "bundle/vim-textobj-user"]
-	path = bundle/vim-textobj-user
+[submodule "pack/bundle/start/vim-textobj-user"]
+	path = pack/bundle/start/vim-textobj-user
 	url = git@github.com:kana/vim-textobj-user.git
-[submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
+[submodule "pack/bundle/start/vim-indent-guides"]
+	path = pack/bundle/start/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
-[submodule "bundle/incsearch.vim"]
-	path = bundle/incsearch.vim
+[submodule "pack/bundle/start/incsearch.vim"]
+	path = pack/bundle/start/incsearch.vim
 	url = https://github.com/haya14busa/incsearch.vim
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
+[submodule "pack/bundle/start/vim-javascript"]
+	path = pack/bundle/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-;[submodule "bundle/matchit"]
-	;path = bundle/matchit
+;[submodule "pack/bundle/start/supertab"]
+  ;path = pack/bundle/start/supertab
+  ;url = git@github.com:ervandew/supertab.git
+;[submodule "pack/bundle/start/YouCompleteMe"]
+	;path = pack/bundle/start/YouCompleteMe
+	;url = https://github.com/Valloric/YouCompleteMe.git
+;[submodule "pack/bundle/start/matchit"]
+	;path = pack/bundle/start/matchit
 	;url = git@github.com:tmhedberg/matchit.git
-;[submodule "bundle/MatchTag"]
-	;path = bundle/MatchTag
+;[submodule "pack/bundle/start/MatchTag"]
+	;path = pack/bundle/start/MatchTag
 	;url = git@github.com:gregsexton/MatchTag.git
-;[submodule "bundle/mustache"]
-	;path = bundle/mustache
+;[submodule "pack/bundle/start/mustache"]
+	;path = pack/bundle/start/mustache
 	;url = git@github.com:mustache/vim-mustache-handlebars.git
-;[submodule "bundle/scss-syntax"]
-	;path = bundle/scss-syntax
+;[submodule "pack/bundle/start/scss-syntax"]
+	;path = pack/bundle/start/scss-syntax
 	;url = git@github.com:cakebaker/scss-syntax.vim.git
-;[submodule "bundle/tabular"]
-	;path = bundle/tabular
+;[submodule "pack/bundle/start/tabular"]
+	;path = pack/bundle/start/tabular
 	;url = git@github.com:godlygeek/tabular.git
-;[submodule "bundle/tlib_vim"]
-	;path = bundle/tlib_vim
+;[submodule "pack/bundle/start/tlib_vim"]
+	;path = pack/bundle/start/tlib_vim
 	;url = git@github.com:tomtom/tlib_vim.git
-;[submodule "bundle/vim-addon-mw-utils"]
-	;path = bundle/vim-addon-mw-utils
+;[submodule "pack/bundle/start/vim-addon-mw-utils"]
+	;path = pack/bundle/start/vim-addon-mw-utils
 	;url = git@github.com:MarcWeber/vim-addon-mw-utils.git
-;[submodule "bundle/vim-expand-region"]
-	;path = bundle/vim-expand-region
+;[submodule "pack/bundle/start/vim-expand-region"]
+	;path = pack/bundle/start/vim-expand-region
 	;url = git@github.com:terryma/vim-expand-region.git
-;[submodule "bundle/vim-misc"]
-	;path = bundle/vim-misc
+;[submodule "pack/bundle/start/vim-misc"]
+	;path = pack/bundle/start/vim-misc
 	;url = git@github.com:xolox/vim-misc.git
-;[submodule "bundle/vim-unimpaired"]
-	;path = bundle/vim-unimpaired
+;[submodule "pack/bundle/start/vim-unimpaired"]
+	;path = pack/bundle/start/vim-unimpaired
 	;url = git@github.com:tpope/vim-unimpaired.git
-;[submodule "bundle/vim-hardtime"]
-	;path = bundle/vim-hardtime
+;[submodule "pack/bundle/start/vim-hardtime"]
+	;path = pack/bundle/start/vim-hardtime
 	;url = https://github.com/takac/vim-hardtime
-;[submodule "bundle/tern_for_vim"]
-	;path = bundle/tern_for_vim
+;[submodule "pack/bundle/start/tern_for_vim"]
+	;path = pack/bundle/start/tern_for_vim
 	;url = https://github.com/ternjs/tern_for_vim.git
-;[submodule "bundle/delimitMate"]
-	;path = bundle/delimitMate
+;[submodule "pack/bundle/start/delimitMate"]
+	;path = pack/bundle/start/delimitMate
 	;url = https://github.com/Raimondi/delimitMate.git
-;[submodule "bundle/vim-textobj-indent"]
-	;path = bundle/vim-textobj-indent
+;[submodule "pack/bundle/start/vim-textobj-indent"]
+	;path = pack/bundle/start/vim-textobj-indent
 	;url = git@github.com:kana/vim-textobj-indent.git
-;[submodule "bundle/vim-textobj-line"]
-	;path = bundle/vim-textobj-line
+;[submodule "pack/bundle/start/vim-textobj-line"]
+	;path = pack/bundle/start/vim-textobj-line
 	;url = git@github.com:kana/vim-textobj-line.git
-;[submodule "bundle/vim-signature"]
-	;path = bundle/vim-signature
+;[submodule "pack/bundle/start/vim-signature"]
+	;path = pack/bundle/start/vim-signature
 	;url = https://github.com/kshenoy/vim-signature.git
-;[submodule "bundle/incsearch-easymotion.vim"]
-	;path = bundle/incsearch-easymotion.vim
+;[submodule "pack/bundle/start/incsearch-easymotion.vim"]
+	;path = pack/bundle/start/incsearch-easymotion.vim
 	;url = https://github.com/haya14busa/incsearch-easymotion.vim
-;[submodule "bundle/vim-repmo"]
-	;path = bundle/vim-repmo
+;[submodule "pack/bundle/start/vim-repmo"]
+	;path = pack/bundle/start/vim-repmo
 	;url = git@github.com:Houl/vim-repmo.git
-;[submodule "bundle/vim-bufferline"]
-	;path = bundle/vim-bufferline
+;[submodule "pack/bundle/start/vim-bufferline"]
+	;path = pack/bundle/start/vim-bufferline
 	;url = https://github.com/bling/vim-bufferline
-;[submodule "bundle/vim-smooth-scroll"]
-	;path = bundle/vim-smooth-scroll
+;[submodule "pack/bundle/start/vim-smooth-scroll"]
+	;path = pack/bundle/start/vim-smooth-scroll
 	;url = git@github.com:terryma/vim-smooth-scroll.git
-;[submodule "bundle/vim-repeat"]
-	;path = bundle/vim-repeat
+;[submodule "pack/bundle/start/vim-repeat"]
+	;path = pack/bundle/start/vim-repeat
 	;url = git@github.com:tpope/vim-repeat.git
-[submodule "bundle/fzf"]
-	path = bundle/fzf
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
 	url = git@github.com:junegunn/fzf.git
-[submodule "bundle/fzf.vim"]
-	path = bundle/fzf.vim
+[submodule "pack/bundle/start/fzf.vim"]
+	path = pack/bundle/start/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
-[submodule "bundle/nvim-yarp"]
-	path = bundle/nvim-yarp
+[submodule "pack/bundle/start/nvim-yarp"]
+	path = pack/bundle/start/nvim-yarp
 	url = git@github.com:roxma/nvim-yarp.git
-[submodule "bundle/vim-hug-neovim-rpc"]
-	path = bundle/vim-hug-neovim-rpc
+[submodule "pack/bundle/start/vim-hug-neovim-rpc"]
+	path = pack/bundle/start/vim-hug-neovim-rpc
 	url = git@github.com:roxma/vim-hug-neovim-rpc.git
-[submodule "deoplete.nvim"]
-	path = deoplete.nvim
-	url = git@github.com:Shougo/deoplete.nvim.git
-[submodule "bundle/deoplete.nvim"]
-	path = bundle/deoplete.nvim
+[submodule "pack/bundle/start/deoplete.nvim"]
+	path = pack/bundle/start/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim.git

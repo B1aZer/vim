@@ -3,4 +3,5 @@ undodir/
 _backup/
 _temp/
 sessions/
-unused/
+pack/bundle/opt
+

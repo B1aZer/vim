@@ -2,12 +2,24 @@
 
 ### Install new modules
 
-1. git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-2. git add .
+1. git submodule add http://github.com/tpope/vim-fugitive.git /pack/bundle/start/fugitive
+2. git add .gitmodules /pack/bundle/start/fugitive
 3. git commit -m "Install Fugitive.vim bundle as a submodule."
-[from](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
-4. Install [deoplete](https://github.com/Shougo/deoplete.nvim)
+[from](https://shapeshed.com/vim-packages/)
+~~4. Install [deoplete](https://github.com/Shougo/deoplete.nvim)~~
 ~~4. install YCM; cd bundle/tern_for_vim -> npm install~~
+
+### Update modules
+
+1. git submodule update --remote --merge
+2. git commit
+
+### Removing a package
+
+1. git submodule deinit vim/pack/shapeshed/start/vim-airline
+2. git rm vim/pack/shapeshed/start/vim-airline
+3. rm -Rf .git/modules/vim/pack/shapeshed/start/vim-airline
+4. git commit
 
 ### On other machine
 
@@ -15,12 +27,14 @@
 0. git submodule update --init --recursive
 1. git submodule foreach git pull origin master (updates all modules)
 
-### Update submodules
+### ~~Update submodules~~
 
 1. git pull --recurse-submodules
 2. git submodule update --init --recursive
-(2.5). git submodule foreach --recursive git checkout master
-(3). in YouCompleteMe dir git submodule update --init --recursive
+(3). git submodule foreach --recursive git checkout master
+~~(3). in YouCompleteMe dir git submodule update --init --recursive~~
+
+
 
 ###### Apply custom patches
 
@@ -67,7 +81,6 @@ power font for airline
 
 ### Mappings
 
- - TODO: some RepMo bindings
  - TODO: kj = escape
  - Use Fn snippets. https://github.com/honza/vim-snippets/tree/master/UltiSnips
  - use C-j,k instead of smooth scroll

@@ -1,0 +1,37 @@
+snippet -- "YAML"
+---
+id: ${0}
+title:
+---
+
+endsnippet
+
+snippet -[ "Checkbox"
+- [ ] ${0}
+endsnippet
+
+snippet #3 "H3 header"
+### ${0}
+
+endsnippet
+
+snippet #6 "H6 Header"
+###### ${0}
+
+endsnippet
+
+snippet [ "Link to something"
+[${1:${VISUAL:Text}}](${2:www.url.com})$0
+endsnippet
+
+# Test
+# python snippet :help UltiSnips-python
+snippet wow
+${1:Text}`!p snip.rv = (75-2*len(t[1]))*' '+t[1].upper()`
+endsnippet
+
+# Test
+snippet indent
+Indent is: `!v indent(".")`.
+endsnippet
+
