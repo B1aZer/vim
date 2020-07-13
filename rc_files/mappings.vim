@@ -303,8 +303,8 @@ nnoremap [c g;
 nnoremap ]c g,
 
 " setting folding
-noremap zl zr
-noremap zh zm
+noremap [f zr
+noremap ]f zm
 
 " go to past locations, to be consistent with unimpared
 nnoremap [p `[
