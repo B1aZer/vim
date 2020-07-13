@@ -10,9 +10,9 @@
 [submodule "pack/bundle/start/vim-airline"]
 	path = pack/bundle/start/vim-airline
 	url = git@github.com:bling/vim-airline.git
-[submodule "pack/bundle/start/vim-better-whitespace"]
-	path = pack/bundle/start/vim-better-whitespace
-	url = git@github.com:ntpeters/vim-better-whitespace.git
+;[submodule "pack/bundle/start/vim-better-whitespace"]
+	;path = pack/bundle/start/vim-better-whitespace
+	;url = git@github.com:ntpeters/vim-better-whitespace.git
 [submodule "pack/bundle/start/vim-easymotion"]
 	path = pack/bundle/start/vim-easymotion
 	url = git@github.com:easymotion/vim-easymotion.git
@@ -31,9 +31,9 @@
 [submodule "pack/bundle/start/vim-snippets"]
 	path = pack/bundle/start/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule "pack/bundle/start/vim-jsdoc"]
-	path = pack/bundle/start/vim-jsdoc
-	url = git@github.com:heavenshell/vim-jsdoc.git
+;[submodule "pack/bundle/start/vim-jsdoc"]
+	;path = pack/bundle/start/vim-jsdoc
+	;url = git@github.com:heavenshell/vim-jsdoc.git
 [submodule "pack/bundle/start/vim-CamelCaseMotion"]
 	path = pack/bundle/start/vim-CamelCaseMotion
 	url = git@github.com:bkad/CamelCaseMotion.git
