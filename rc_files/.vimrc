@@ -170,6 +170,7 @@ hi ExtraWhitespace guibg=#990000 ctermbg=red
 
 " smat case for ee
 let g:EasyMotion_smartcase = 1
+let g:sneak#use_ic_scs = 1
 
 " Powerline fonts
 let g:airline_powerline_fonts = 1
@@ -434,3 +435,7 @@ function! s:PluginFunctions()
 endfunction
 
 autocmd VimEnter * call s:PluginFunctions()
+
+" Git Grep
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+

@@ -21,15 +21,15 @@ ab req @requires
 
 let mapleader = "\<Space>"
 
-command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
-
 " Expand region pligun bind o v
 "vmap v <Plug>(expand_region_expand)
-vnoremap v <Esc>
+"vnoremap v <Esc>
 "vmap <C-v> <Plug>(expand_region_shrink)
 "noremap V v$
 
-" vp doesn't replace paste buffer
+" p in visual mode doesn't replace yank register
+" so we can past same content over multiple instances
+" actually its ap, you need to use substitute for this
 function! RestoreRegister()
   let @" = s:restore_reg
   return ''
@@ -38,11 +38,13 @@ function! s:Repl()
   let s:restore_reg = @"
   return "p@=RestoreRegister()\<cr>"
 endfunction
-vmap <silent> <expr> p <sid>Repl()
+"vmap <silent> <expr> p <sid>Repl()
+vnoremap p "_dp
+vnoremap P "_dP
 
 " expand to current working directory
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-"map <leader>e :e %%
+" cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+"
 "map <leader>es :sp %%
 "map <leader>ev :vsp %%
 "map <leader>et :tabe %%
@@ -58,14 +60,24 @@ nmap <leader>cd :lcd %:h<CR>
 " set text wrapping toggles
 "nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
 
+" Clean whiespace
+map <silent> <leader><F2> :StripWhitespace<CR>
 " Toggle hlsearch with <leader>hs
 nmap <leader><F3> :set hlsearch! hlsearch?<CR>
+" Spell check
+nnoremap <leader><F4> :setlocal spell!<cr>
+" Synstax highlight debug
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
 
 " Adjust viewports to the same size
 "map <Leader>= <C-w>=
 
 " Maximize split
-nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
+" nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 " buffer navigation like firefox
 "nnoremap <A-j>           : bprevious<CR>
@@ -78,11 +90,11 @@ nnoremap <silent> <Leader>+ :exe "vertical resize " . (200 * 2/3)<CR>
 
 if has('mac')
 
-  nnoremap <D-j>           : bprevious<CR>
-  nnoremap <D-k>           : bnext<CR>
+  " nnoremap <D-j>           : bprevious<CR>
+  " nnoremap <D-k>           : bnext<CR>
 
-  inoremap <D-j>   <Esc>  : bprevious<CR>i
-  inoremap <D-k>   <Esc>  : bnext<CR>i
+  " inoremap <D-j>   <Esc>  : bprevious<CR>i
+  " inoremap <D-k>   <Esc>  : bnext<CR>i
 
 endif
 
@@ -108,7 +120,7 @@ endif
 "imap <A-9> <Esc>9gt
 
 "makes K split lines (the opposite of J)
-nnoremap K i<cr><esc>k$
+"nnoremap K i<cr><esc>k$
 
 " Move tabs with alt + left|right
 "nnoremap <silent> <C-H> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
@@ -121,15 +133,12 @@ nnoremap <C-J> <C-E>
 
 "map <silent> <A-n> :Lexplore<CR>
 
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
-
-" Clean whiespace
-map <silent> <leader><F2> :StripWhitespace<CR>
+"nmap <Leader>a= :Tabularize /=<CR>
+"vmap <Leader>a= :Tabularize /=<CR>
+"nmap <Leader>a: :Tabularize /:\zs<CR>
+"vmap <Leader>a: :Tabularize /:\zs<CR>
+"nmap <Leader>a, :Tabularize /,\zs<CR>
+"vmap <Leader>a, :Tabularize /,\zs<CR>
 
 " Wrapped movings
 map j gj
@@ -159,9 +168,9 @@ map k gk
 map <silent> <leader>qq :q!<CR>
 
 " Easy movings
-map <Leader><Leader>l <Plug>(easymotion-lineforward)
-map <Leader><Leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
+"map <Leader><Leader>l <Plug>(easymotion-lineforward)
+"map <Leader><Leader>h <Plug>(easymotion-linebackward)
+"map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
 "map <Leader><Leader>j <Plug>(easymotion-j)
 "map <Leader><Leader>k <Plug>(easymotion-k)
 "map <leader><leader>/ <Plug>(incsearch-easymotion-/)
@@ -169,13 +178,13 @@ map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
 "map <leader><leader>; <Plug>(easymotion-repeat)
 
 " easy motion 2 char search
-nmap s <Plug>(easymotion-s2)
-xmap s <Plug>(easymotion-s2)
-omap z <Plug>(easymotion-s2)
+"nmap s <Plug>(easymotion-overwin-f2)
+"xmap s <Plug>(easymotion-overwin-f2)
+"omap z <Plug>(easymotion-overwin-f2)
 " easy motion s search
-nmap <leader>s <Plug>(easymotion-sn)
-xmap <leader>s <Plug>(easymotion-sn)
-omap <leader>z <Plug>(easymotion-sn)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+xmap <leader>s <Plug>(easymotion-overwin-f2)
+omap <leader>z <Plug>(easymotion-overwin-f2)
 
 " Past from yank buffer
 imap <C-R><C-R> <C-R>"
@@ -184,10 +193,11 @@ imap <C-R><C-R> <C-R>"
 cmap w!! w !sudo tee % >/dev/null
 
 " fugitive
+nnoremap <silent> <leader>ga :Gwrite<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gg :Gcommit<CR>
-nnoremap <silent> <leader>gg :Gpush<CR>
+"nnoremap <silent> <leader>gp :Gpush<CR>
 "nnoremap <leader>gr :Ggr 
 "nnoremap gr "zyiw:Ggr <C-r>z
 "nnoremap gf :Ggr <C-r>%
@@ -195,15 +205,14 @@ nnoremap <silent> <leader>gg :Gpush<CR>
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
 "nnoremap <silent> <leader>gr :Gread<CR>
-nnoremap <silent> <leader>ga :Gwrite<CR>
 "nnoremap <silent> <leader>ge :Gedit<CR>
 " Mnemonic _i_nteractive
 "nnoremap <silent> <leader>gi :Git add -p %<CR>
 "nnoremap <silent> <leader>gc :SignifyToggle<CR>
 
 " Relad syntax
-noremap <F11> <Esc>:syntax sync fromstart<CR>
-inoremap <F11> <C-o>:syntax sync fromstart<CR>
+"noremap <F11> <Esc>:syntax sync fromstart<CR>
+"inoremap <F11> <C-o>:syntax sync fromstart<CR>
 
 " Remap ` to '
 " nnoremap ' `
@@ -222,8 +231,6 @@ inoremap <F11> <C-o>:syntax sync fromstart<CR>
 
 "nmap <leader>c ciw
 
-" Spell check
-nnoremap <leader><F4> :setlocal spell!<cr>
 
 " fold
 " toggle current fold
@@ -250,7 +257,7 @@ nnoremap <leader><F4> :setlocal spell!<cr>
 "noremap <Leader>s :let @x=@" \| let @"=@a \| let @a=@b \| let @b=@x<CR>
 
 " JsDoc
-nnoremap <silent> <leader>JS :JsDoc<cr>
+"nnoremap <silent> <leader>JS :JsDoc<cr>
 "nnoremap <silent> <leader>js <Plug>(jsdoc)
 
 map <silent> <leader>w <Plug>CamelCaseMotion_w
@@ -280,10 +287,10 @@ nnoremap ^ 0
 " put the cursor right after the quote
 inoremap <C-a> <esc>la
 
-"(v)im (r)eload
-nmap <silent> <leader>vr :so %<CR>
+"(v)im (r)eload only in .vimrc
+"nmap <silent> <leader>vr :so %<CR>
 
-" cloase quick window
+" close quick window
 nnoremap <silent> <leader>qc :cclose<CR>
 
 " Prev/Next change
@@ -296,8 +303,8 @@ noremap zl zr
 noremap zh zm
 
 " go to past locations, to be consistent with unimpared
-"nnoremap [p `[
-"nnoremap ]p `]
+nnoremap [p `[
+nnoremap ]p `]
 
 "nnoremap [p <Plug>yankstack_substitute_older_paste
 "nnoremap ]p <Plug>yankstack_substitute_newer_paste
@@ -334,8 +341,9 @@ noremap zh zm
 " End of RepMo
 
 " Go to next close fold
-nnoremap <silent> zj :call NextClosedFold('j')<cr>
-nnoremap <silent> zk :call NextClosedFold('k')<cr>
+"nnoremap <silent> zj :call NextClosedFold('j')<cr>
+"nnoremap <silent> zk :call NextClosedFold('k')<cr>
+"
 function! NextClosedFold(dir)
     let cmd = 'norm!z' . a:dir
     let view = winsaveview()
@@ -376,7 +384,7 @@ endfunction
 
 nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
 
-inoremap kj <esc>
+"inoremap kj <esc>
 "inoremap <esc> <nop>
 
 " delete variable iv as text object
@@ -392,15 +400,10 @@ inoremap kj <esc>
 " open vertivcal netrw
 nnoremap <silent> <leader>ve :Vex<cr>
 
-" synstax highlight debug
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-" vim markdown
+" vim MARKDOWN
 
 " open Toc
-autocmd Filetype markdown nnoremap <silent> <leader>j :Toc<cr>
+"autocmd Filetype markdown nnoremap <silent> <leader>j :Toc<cr>
 
 " select from TOC and quit
 autocmd FileType qf nnoremap <Space> <cr>:only<cr>
