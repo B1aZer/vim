@@ -20,7 +20,7 @@ Vim is like language itself. It has:
 1. git submodule update --remote --merge
 2. git commit
 
-### Removing a package
+### Removing a package [^2]
 
 1. git submodule deinit vim/pack/shapeshed/start/vim-airline
 2. git rm vim/pack/shapeshed/start/vim-airline
@@ -189,3 +189,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
   - [ ] Check for useful mappings: https://github.com/skwp/dotfiles
   - [.] Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
   - [ ] http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim#answer-1220118
+
+###### Referene
+
+[^2]: [github issue](https://gist.github.com/myusuf3/7f645819ded92bda6677)
+
