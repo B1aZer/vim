@@ -399,9 +399,9 @@ func! s:note_add(...)
 
   " enter the title and timestamp (using ultisnips) in the new file
   if len(a:000) > 0
-    exec "normal ggO--\<c-space>\<c-l>\<esc>\j\$\a " . join(a:000) . "\<esc>L"
+    exec "normal ggO--\<c-@>\<c-l>\<c-j>" . join(a:000) . "\<esc>L"
   else
-    exec "normal ggO--\<c-space>\<c-l>\<esc>\j\A\ "
+    exec "normal ggO--\<c-@>\<c-l>\<c-j>"
   endif
 endfunc
 
@@ -436,6 +436,11 @@ endfunction
 
 autocmd VimEnter * call s:PluginFunctions()
 
-" Git Grep
-command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
+" Git Grep TODO: replace with :Ag
+" command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw | redraw!
 
+" vim hardmode
+let g:hardtime_default_on = 1
+
+" see key presses
+set showcmd

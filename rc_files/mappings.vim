@@ -30,17 +30,21 @@ let mapleader = "\<Space>"
 " p in visual mode doesn't replace yank register
 " so we can past same content over multiple instances
 " actually its ap, you need to use substitute for this
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
+"function! RestoreRegister()
+  "let @" = s:restore_reg
+  "return ''
+"endfunction
+"function! s:Repl()
+  "let s:restore_reg = @"
+  "return "p@=RestoreRegister()\<cr>"
+"endfunction
 "vmap <silent> <expr> p <sid>Repl()
 vnoremap p "_dp
 vnoremap P "_dP
+
+" use the same reg mapping for visual mode
+vnoremap <c-r>0 "0p
+vnoremap <c-r>+ "+p
 
 " expand to current working directory
 " cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -432,3 +436,5 @@ nnoremap <c-p> :History<cr>
 " Safe paste from system clipboard.
 " See https://vim.fandom.com/wiki/Pasting_registers
 inoremap <C-R>+ <C-R><C-R>+
+
+nnoremap gr yiw :Rg <c-r>0<CR>
