@@ -1,5 +1,11 @@
 .vim folder
 
+Vim is like language itself. It has:
+
+ - verbs (yank, delete)
+ - subjects (word, mark, paragraph, search text)
+ - prefixes (3j, 2w)
+
 ### Install new modules
 
 1. git submodule add http://github.com/tpope/vim-fugitive.git /pack/bundle/start/fugitive

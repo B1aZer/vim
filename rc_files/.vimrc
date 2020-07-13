@@ -444,3 +444,7 @@ let g:hardtime_default_on = 1
 
 " see key presses
 set showcmd
+
+" temp solution for wahite scace
+" better - https://superuser.com/questions/921920/display-trailing-spaces-in-vim
+set list listchars=tab:\ \ ,trail:·
