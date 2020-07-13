@@ -1,4 +1,4 @@
-.vim folder
+#.vim folder
 
 Vim is like language itself. It has:
 
@@ -186,11 +186,11 @@ vmap <C-v> <Plug>(expand_region_shrink)
   - [x] CtrlP is slow and not really useful, fzf ftw
   - [x] ~~Somehow the smae buffer is always opens~~ (Able to resolve with new :BW command)
   - [ ] New mappings. http://learnvimscriptthehardway.stevelosh.com/chapters/15.html#movement-mappings
-  - [ ] Check for useful mappings: https://github.com/skwp/dotfiles
-  - [.] Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
+  - [x] Check for useful mappings: https://github.com/skwp/dotfiles
+  - [x] Write a plugin that would auto mark every edit, so it would be easy to jump back, [c not always works for some reason
   - [ ] http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim#answer-1220118
 
-###### Referene
+###### Reference
 
 [^2]: [github issue](https://gist.github.com/myusuf3/7f645819ded92bda6677)
 
