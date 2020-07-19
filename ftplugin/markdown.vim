@@ -9,8 +9,8 @@ else
   hi mkdStatus ctermfg=134
 endif
 " TODO: VERY SLOW!
-call matchadd('mkdCheckBoxCompete', '- \[x\].*')
-call matchadd('mkdStatus', '\(?:status\|due\):')
+"call matchadd('mkdCheckBoxCompete', '- \[x\].*')
+"call matchadd('mkdStatus', '\(?:status\|due\):')
 
 set nosmartindent
 set noautoindent

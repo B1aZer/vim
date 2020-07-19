@@ -1,22 +1,8 @@
 "USED with leader:
-"e*
-"f*
-"c*
-"w*
-"a*
-"h
-"j
-"k
-"l
-"r
-"q
-"g*
-"0
-"s
 
 " ABBREVIATIONS "
 "ab se side-eff:
-ab req @requires
+"ab req @requires
 " END of ABBREVIATIONS "
 
 let mapleader = "\<Space>"
@@ -39,8 +25,11 @@ let mapleader = "\<Space>"
   "return "p@=RestoreRegister()\<cr>"
 "endfunction
 "vmap <silent> <expr> p <sid>Repl()
-vnoremap p "_dp
-vnoremap P "_dP
+
+" Visual paste put content to " (default register)
+" effectively changing next p. We don't want that.
+"vnoremap p "_dp
+"vnoremap P "_dP
 
 " use the same reg mapping for visual mode
 vnoremap <c-r>0 "0p
@@ -59,7 +48,7 @@ vnoremap <c-r>+ "+p
 "nnoremap <leader>fef :normal! gg=G``<CR>
 
 " cd to the directory containing the file in the buffer
-nmap <leader>cd :lcd %:h<CR>
+cabbrev cd lcd %:h
 
 " set text wrapping toggles
 "nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
@@ -169,7 +158,8 @@ map k gk
 " Close window
 "map <leader>q <c-w>q
 "nmap <leader>q :bp <BAR> bd #<CR>
-map <silent> <leader>qq :q!<CR>
+" USE ZQ
+"map <silent> <leader>qq :q!<CR>
 
 " Easy movings
 "map <Leader><Leader>l <Plug>(easymotion-lineforward)
@@ -182,25 +172,28 @@ map <silent> <leader>qq :q!<CR>
 "map <leader><leader>; <Plug>(easymotion-repeat)
 
 " easy motion 2 char search
-"nmap s <Plug>(easymotion-overwin-f2)
-"xmap s <Plug>(easymotion-overwin-f2)
-"omap z <Plug>(easymotion-overwin-f2)
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 " easy motion s search
-nmap <leader>s <Plug>(easymotion-overwin-f2)
-xmap <leader>s <Plug>(easymotion-overwin-f2)
+nmap <leader>f <Plug>(easymotion-overwin-f2)
+xmap <leader>f <Plug>(easymotion-overwin-f2)
 omap <leader>z <Plug>(easymotion-overwin-f2)
 
 " Past from yank buffer
-imap <C-R><C-R> <C-R>"
+"imap <C-R><C-R> <C-R>"
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
 " fugitive
-nnoremap <silent> <leader>ga :Gwrite<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>
-nnoremap <silent> <leader>gd :Gdiff<CR>
-nnoremap <silent> <leader>gg :Gcommit<CR>
+"nnoremap <silent> <leader>ga :Gwrite<CR>
+"nnoremap <silent> <leader>gs :Gstatus<CR>
+"nnoremap <silent> <leader>gd :Gdiff<CR>
+"nnoremap <silent> <leader>gg :Gcommit<CR>
+cabbrev ga Gwrite
+cabbrev gs Gstatus
+cabbrev gd Gdiff
+cabbrev gg Gcommit
 "nnoremap <silent> <leader>gp :Gpush<CR>
 "nnoremap <leader>gr :Ggr 
 "nnoremap gr "zyiw:Ggr <C-r>z
@@ -289,22 +282,23 @@ nnoremap ^ 0
 "
 " the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
 " put the cursor right after the quote
-inoremap <C-a> <esc>la
+"inoremap <C-a> <esc>la
 
 "(v)im (r)eload only in .vimrc
 "nmap <silent> <leader>vr :so %<CR>
 
 " close quick window
-nnoremap <silent> <leader>qc :cclose<CR>
+"nnoremap <silent> <leader>qc :cclose<CR>
+cabbrev cc :cclose
 
 " Prev/Next change
 " overwrites default mapping
 nnoremap [c g;
 nnoremap ]c g,
 
-" setting folding
-noremap [f zr
-noremap ]f zm
+" setting folding level
+noremap [f zm
+noremap ]f zr
 
 " go to past locations, to be consistent with unimpared
 nnoremap [p `[
@@ -402,7 +396,8 @@ nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
 "noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 " open vertivcal netrw
-nnoremap <silent> <leader>ve :Vex<cr>
+"nnoremap <silent> <leader>ve :Vex<cr>
+cabbrev ve Vex
 
 " vim MARKDOWN
 
@@ -424,17 +419,38 @@ function s:toggle(pattern, dict, ...)
   return view
 endfunction
 
-" Buffers as in unimpaired
-nnoremap ]b           : bprevious<CR>
-nnoremap [b           : bnext<CR>
+" Buffers as in unimpaired, consistent with airline
+nnoremap [b           : bprevious<CR>
+nnoremap ]b           : bnext<CR>
 
 " Open fzf
-nnoremap <leader><c-p> :Files<cr>
-inoremap <esc><leader><c-p> :Files<cr>
+"nnoremap <leader><c-p> :Files<cr>
+"inoremap <esc><leader><c-p> :Files<cr>
+" history has files from other directories
 nnoremap <c-p> :History<cr>
 
 " Safe paste from system clipboard.
 " See https://vim.fandom.com/wiki/Pasting_registers
 inoremap <C-R>+ <C-R><C-R>+
 
-nnoremap gr yiw :Rg <c-r>0<CR>
+" rg binding
+nnoremap gr yiW :Rg <c-r>0<CR>
+
+" Y consistent with D
+"nnoremap Y y$
+
+" disable ex
+map Q <nop>
+
+" short for Files
+"command Fl Files
+cabbrev fl Files
+
+" abrev for Rg
+cabbrev rg Rg
+cabbrev gr Rg
+
+" quick note
+cabbrev nt Note
+
+" markdown <c-i> mappings in ftplugin

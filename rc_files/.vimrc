@@ -362,7 +362,7 @@ function! s:build_quickfix_list(lines)
   for s:filename in s:filenames
     let s:lines = readfile(s:filename.filename)
     try
-      execute "normal!i[[" . split(s:lines[1],': ')[1] ."]] [". split(s:lines[2],': ')[1] ."](" . s:filename.filename . ")\<Esc>"
+      execute "normal!a[[" . split(s:lines[1],': ')[1] ."]] [". split(s:lines[2],': ')[1] ."](" . s:filename.filename . ")\<Esc>"
     catch /.*/
       echo "Caught error: " . v:exception
     endtry
