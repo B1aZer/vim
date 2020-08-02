@@ -48,7 +48,8 @@ vnoremap <c-r>+ "+p
 "nnoremap <leader>fef :normal! gg=G``<CR>
 
 " cd to the directory containing the file in the buffer
-cabbrev cd lcd %:h
+cabbrev cd cd %:h
+cabbrev lcd lcd %:h
 
 " set text wrapping toggles
 "nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
@@ -172,12 +173,12 @@ map k gk
 "map <leader><leader>; <Plug>(easymotion-repeat)
 
 " easy motion 2 char search
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+"map <leader>f <Plug>Sneak_s
+"map <leader>F <Plug>Sneak_S
 " easy motion s search
-nmap <leader>f <Plug>(easymotion-overwin-f2)
-xmap <leader>f <Plug>(easymotion-overwin-f2)
-omap <leader>z <Plug>(easymotion-overwin-f2)
+map f <Plug>(easymotion-overwin-f2)
+xmap f <Plug>(easymotion-overwin-f2)
+omap f <Plug>(easymotion-overwin-f2)
 
 " Past from yank buffer
 "imap <C-R><C-R> <C-R>"
@@ -397,7 +398,8 @@ nnoremap <silent> <leader>q :call CloseWindowOrKillBuffer()<CR>
 
 " open vertivcal netrw
 "nnoremap <silent> <leader>ve :Vex<cr>
-cabbrev ve Vex
+"cabbrev ve Vex
+"cabbrev e :e .
 
 " vim MARKDOWN
 
@@ -453,4 +455,6 @@ cabbrev gr Rg
 " quick note
 cabbrev nt Note
 
-" markdown <c-i> mappings in ftplugin
+" Search next curly brace
+noremap ]{ /{<cr>
+noremap [} ?}<cr>

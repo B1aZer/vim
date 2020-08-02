@@ -8,6 +8,7 @@ else
   hi mkdCheckBoxCompete ctermfg=236
   hi mkdStatus ctermfg=134
 endif
+
 " TODO: VERY SLOW!
 "call matchadd('mkdCheckBoxCompete', '- \[x\].*')
 "call matchadd('mkdStatus', '\(?:status\|due\):')

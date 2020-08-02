@@ -137,7 +137,7 @@
 	path = pack/bundle/start/deoplete.nvim
 	url = git@github.com:Shougo/deoplete.nvim.git
 [submodule "pack/bundle/start/vim-sneak"]
-	path = pack/bundle/start/vim-sneak
+	path = pack/bundle/opt/bundle/vim-sneak
 	url = git@github.com:justinmk/vim-sneak.git
 [submodule "pack/bundle/start/vim-hardtime"]
 	path = pack/bundle/start/vim-hardtime
