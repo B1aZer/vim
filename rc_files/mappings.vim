@@ -176,9 +176,19 @@ map k gk
 "map <leader>f <Plug>Sneak_s
 "map <leader>F <Plug>Sneak_S
 " easy motion s search
-map f <Plug>(easymotion-overwin-f2)
-xmap f <Plug>(easymotion-overwin-f2)
-omap f <Plug>(easymotion-overwin-f2)
+"noremap f <Plug>(easymotion-overwin-f2)
+"xmap f <Plug>(easymotion-overwin-f2)
+"omap f <Plug>(easymotion-overwin-f2)
+"map f <Plug>(easymotion-overwin-f2)
+"nnoremap f <Plug>(easymotion-overwin-f)
+"xnoremap f <Plug>(easymotion-bd-f)
+"onoremap f <Plug>(easymotion-bd-f)
+"map F <Plug>(easymotion-overwin-f2)
+"xmap F <Plug>(easymotion-overwin-f2)
+"omap F <Plug>(easymotion-overwin-f2)
+map  f <Plug>(easymotion-f)
+map  F <Plug>(easymotion-F)
+"nmap f <Plug>(easymotion-overwin-f)
 
 " Past from yank buffer
 "imap <C-R><C-R> <C-R>"
@@ -343,19 +353,19 @@ nnoremap ]p `]
 "nnoremap <silent> zj :call NextClosedFold('j')<cr>
 "nnoremap <silent> zk :call NextClosedFold('k')<cr>
 "
-function! NextClosedFold(dir)
-    let cmd = 'norm!z' . a:dir
-    let view = winsaveview()
-    let [l0, l, open] = [0, view.lnum, 1]
-    while l != l0 && open
-        exe cmd
-        let [l0, l] = [l, line('.')]
-        let open = foldclosed(l) < 0
-    endwhile
-    if open
-        call winrestview(view)
-    endif
-endfunction
+"function! NextClosedFold(dir)
+    "let cmd = 'norm!z' . a:dir
+    "let view = winsaveview()
+    "let [l0, l, open] = [0, view.lnum, 1]
+    "while l != l0 && open
+        "exe cmd
+        "let [l0, l] = [l, line('.')]
+        "let open = foldclosed(l) < 0
+    "endwhile
+    "if open
+        "call winrestview(view)
+    "endif
+"endfunction
 
 let g:ctrlp_prompt_mappings = {
   \ 'ToggleType(1)':        ['<c-f>', '<a-k>'],
@@ -458,3 +468,5 @@ cabbrev nt Note
 " Search next curly brace
 noremap ]{ /{<cr>
 noremap [} ?}<cr>
+noremap ]} /}<cr>
+noremap [{ ?{<cr>

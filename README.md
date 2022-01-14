@@ -32,6 +32,7 @@ Vim is like language itself. It has:
 (you may need to go in bundles directory)
 0. git submodule update --init --recursive
 1. git submodule foreach git pull origin master (updates all modules)
+2. mkdir ~/.vim/_backup && mkdir ~/.vim/_temp && mkdir ~/.vim/undodir
 
 ### ~~Update submodules~~
 
@@ -50,6 +51,30 @@ cp ./custom_patches/ftplugin/markdown.vim to ./bundles/vim-markdown/ftplugin/mar
 
 monaco for terminal
 power font for airline
+
+### GREP
+
+https://github.com/junegunn/fzf.vim
+rg install
+
+### HOTKEYS
+
+ - <c-r>+ paste from sys clipboard
+ - :fl to quickly find file in a dir
+ - <space>F2 - clean whitepsace
+ - <space>F3 - toggle search hl
+ - <space>F4 - spell check
+ - <space>F10 - syntax hl for tests
+ - <space>q - close window
+ - f/F - easymotion 1 char front and backwards
+ - :w!! sudo save
+ - gs/gd/gg git
+ - ][c - next/prev change
+ - []f folding
+ - []p pastes
+ - []p buffers
+ - gr on a word - search
+ - nt - make a note
 
 ### USEFUL
 

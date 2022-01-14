@@ -319,6 +319,7 @@ let g:ycm_filetype_blacklist = {}
 
 " Minimal
 colorscheme paramount-indie
+set background=light
 "colorscheme slate-imp
 "colorscheme default
 
@@ -382,7 +383,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " Set defulat working dir
-cd ~/Dropbox/Knowledge db/Zettlr
+" cd ~/Dropbox/Knowledge db/Zettlr
 
 " Create note in the same folder as buffer opened
 func! s:note_add(...)
