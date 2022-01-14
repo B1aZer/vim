@@ -145,3 +145,6 @@
 [submodule "pack/bundle/start/typescript-vim"]
 	path = pack/bundle/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "pack/bundle/start/vim-solidity"]
+	path = pack/bundle/start/vim-solidity
+	url = https://github.com/tomlion/vim-solidity

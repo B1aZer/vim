@@ -8,7 +8,7 @@ Vim is like language itself. It has:
 
 ### Install new modules
 
-1. git submodule add http://github.com/tpope/vim-fugitive.git /pack/bundle/start/fugitive
+1. git submodule add -f http://github.com/tpope/vim-fugitive.git pack/bundle/start/fugitive
 2. git add .gitmodules /pack/bundle/start/fugitive
 3. git commit -m "Install Fugitive.vim bundle as a submodule."
 [from](https://shapeshed.com/vim-packages/)
